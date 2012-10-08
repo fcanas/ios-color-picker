@@ -14,11 +14,7 @@
 @implementation ColorPickerViewController
 
 @synthesize delegate, chooseButton;
-#ifdef IPHONE_COLOR_PICKER_SAVE_DEFAULT
 @synthesize defaultsKey;
-#else
-@synthesize defaultsColor;
-#endif
 
 NSString *keyForHue = @"hue";
 NSString *keyForSat = @"sat";
@@ -27,7 +23,7 @@ NSString *keyForBright = @"bright";
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-#ifdef IPHONE_COLOR_PICKER_SAVE_DEFAULT
+
 	NSUserDefaults *saveColors = [NSUserDefaults standardUserDefaults];
 	if (defaultsKey==nil) {
         self.defaultsKey = @"";
@@ -38,25 +34,19 @@ NSString *keyForBright = @"bright";
     if (colorData!=nil) {
         color = (UIColor*)[NSKeyedUnarchiver unarchiveObjectWithData:colorData];
     }
-#endif
-    
-	
+		
     [self moveToDefault];   // Move the crosshair to the default setting
 }
 
 -(void) moveToDefault {
   ColorPickerView *theView = (ColorPickerView*) [self view];
-  #ifdef IPHONE_COLOR_PICKER_SAVE_DEFAULT
-    NSUserDefaults *saveColors = [NSUserDefaults standardUserDefaults];
-    NSData *colorData= [saveColors objectForKey:defaultsKey];
-    UIColor *color;
-    if (colorData!=nil) {
-        color = (UIColor*)[NSKeyedUnarchiver unarchiveObjectWithData:colorData];
-    }
-    [theView setColor:color];
-  #else
-    [theView setColor:defaultsColor];
-  #endif
+  NSUserDefaults *saveColors = [NSUserDefaults standardUserDefaults];
+  NSData *colorData= [saveColors objectForKey:defaultsKey];
+  UIColor *color;
+  if (colorData!=nil) {
+      color = (UIColor*)[NSKeyedUnarchiver unarchiveObjectWithData:colorData];
+  }
+  [theView setColor:color];
 }
 
 - (UIColor *) getSelectedColor {
@@ -68,7 +58,6 @@ NSString *keyForBright = @"bright";
 }
 
 - (IBAction) cancelColorSelection {
-    #ifdef IPHONE_COLOR_PICKER_SAVE_DEFAULT
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	if (defaultsKey==nil) {
         defaultsKey = @"";
@@ -81,9 +70,6 @@ NSString *keyForBright = @"bright";
     }
     
     [delegate colorPickerViewController:self didSelectColor:color];
-    #else
-    [self dismissModalViewControllerAnimated:YES];
-    #endif
 }
 
 // Housekeeping actions when a view as unloaded
