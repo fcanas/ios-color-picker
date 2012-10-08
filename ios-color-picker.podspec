@@ -16,9 +16,10 @@ Pod::Spec.new do |s|
 		LICENSE
 	}
   s.author       = { "Fabian Canas" => "fcanas@gmail.com" }
-  s.source       = { :git => "https://github.com/fcanas/ios-color-picker.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/fcanas/ios-color-picker.git"}
+	#, :tag => "0.0.1" 
   s.platform     = :ios, '4.3'
   s.source_files = '*.{h,m}'
-  s.resources = "Resources/*.png", 'Resources/ColorPickerViewController.xib'
+  s.resources = "Resources/*.png", 'ColorPickerViewController.xib'
   s.frameworks = 'QuartzCore', 'Foundation', 'UIKit', 'CoreGraphics'
 end
