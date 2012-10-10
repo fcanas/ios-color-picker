@@ -9,7 +9,7 @@
 
 #import "ColorPickerViewController.h"
 #import "ColorPickerView.h"
-#import "UIColor-HSVAdditions.h"
+#import "UIColor+HSV.h"
 
 @implementation ColorPickerViewController
 

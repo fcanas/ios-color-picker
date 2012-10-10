@@ -10,7 +10,7 @@
 #import "ColorPickerView.h"
 #import "GradientView.h"
 #import "Constants.h"
-#import "UIColor-HSVAdditions.h"
+#import "UIColor+HSV.h"
 
 @implementation ColorPickerView
 

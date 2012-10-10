@@ -30,7 +30,7 @@
 //
 
 #import "GradientView.h"
-#import "UIColor-HSVAdditions.h"
+#import "UIColor+HSV.h"
 
 @implementation GradientView
 
