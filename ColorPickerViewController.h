@@ -32,8 +32,8 @@
 
 
 @property(nonatomic,assign)	id<ColorPickerViewControllerDelegate> delegate;
-  @property(readwrite,nonatomic,retain) NSString *defaultsKey;
-	@property(readwrite,nonatomic,retain) IBOutlet UIButton *chooseButton;
+@property(readwrite,nonatomic,retain) NSString *defaultsKey;
+@property(readwrite,nonatomic,retain) IBOutlet UIButton *chooseButton;
 
 - (IBAction) chooseSelectedColor;
 - (IBAction) cancelColorSelection;

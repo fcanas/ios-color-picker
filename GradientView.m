@@ -36,27 +36,6 @@
 
 @synthesize theColor;
 
-
-//- (id)initWithFrame:(CGRect)frame {
-//    if (self = [super initWithFrame:frame]) {
-//        // Initialization code
-//    }
-//    return self;
-//}
-
-
-// Returns an appropriate starting point for the demonstration of a linear gradient
-CGPoint demoLGStart(CGRect bounds)
-{
-	return CGPointMake(bounds.origin.x, bounds.origin.y + bounds.size.height * 0.25);
-}
-
-// Returns an appropriate ending point for the demonstration of a linear gradient
-CGPoint demoLGEnd(CGRect bounds)
-{
-	return CGPointMake(bounds.origin.x, bounds.origin.y + bounds.size.height * 0.75);
-}
-
 - (void) setupGradient { 
 	// Create a color equivalent to the current color with brightness maximized
 	const CGFloat *c = CGColorGetComponents([[UIColor colorWithHue:[theColor hue] 

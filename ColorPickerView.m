@@ -12,6 +12,17 @@
 #import "Constants.h"
 #import "UIColor+HSV.h"
 
+@interface ColorPickerView () {
+	CGRect colorMatrixFrame;
+	
+	CGFloat currentBrightness;
+	CGFloat currentHue;
+	CGFloat currentSaturation;
+	
+	UIColor *currentColor;
+}
+@end
+
 @implementation ColorPickerView
 
 @synthesize currentHue;

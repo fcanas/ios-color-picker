@@ -16,15 +16,6 @@
 	IBOutlet ColorSwatchView *showColor;
 	IBOutlet UIImageView *crossHairs;
 	IBOutlet UIImageView *brightnessBar;
-	
-	//Private vars
-	CGRect colorMatrixFrame;
-	
-	CGFloat currentBrightness;
-	CGFloat currentHue;
-	CGFloat currentSaturation;
-	
-	UIColor *currentColor;
 }
 
 @property (readwrite) CGFloat currentBrightness;
