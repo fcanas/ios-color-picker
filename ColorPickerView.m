@@ -8,7 +8,7 @@
 //
 
 #import "ColorPickerView.h"
-#import "GradientView.h"
+#import "FCBrightDarkGradView.h"
 #import "Constants.h"
 #import "UIColor+HSV.h"
 
@@ -39,7 +39,7 @@
 - (id)initWithCoder:(NSCoder*)coder  {
 	if (self = [super initWithCoder:coder]) {
 		
-		gradientView = [[GradientView alloc] initWithFrame:kBrightnessGradientPlacent];
+		gradientView = [[FCBrightDarkGradView alloc] initWithFrame:kBrightnessGradientPlacent];
 		//[gradientView setTheColor:[UIColor yellowColor]];
 		[self addSubview:gradientView];
 		[self sendSubviewToBack:gradientView];

@@ -10,9 +10,9 @@
 #import <UIKit/UIKit.h>
 #import "ColorSwatchView.h"
 
-@class GradientView;
+@class FCBrightDarkGradView;
 @interface ColorPickerView : UIView {
-	GradientView *gradientView;
+	FCBrightDarkGradView *gradientView;
 	IBOutlet ColorSwatchView *showColor;
 	IBOutlet UIImageView *crossHairs;
 	IBOutlet UIImageView *brightnessBar;

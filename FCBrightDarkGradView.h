@@ -32,11 +32,10 @@
 #import <UIKit/UIKit.h>
 
 
-@interface GradientView : UIView {
-	CGGradientRef gradient;
-	UIColor *theColor;
-}
+@interface FCBrightDarkGradView : UIView
 
 @property (readwrite,nonatomic,retain) UIColor *theColor;
+
 - (void) setupGradient;
+
 @end
