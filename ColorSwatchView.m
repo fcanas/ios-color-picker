@@ -9,69 +9,36 @@
 #import "ColorSwatchView.h"
 #import <QuartzCore/QuartzCore.h>
 
-// Fill and stroke a round-rect with corner-radius=7 in a context.
-// The context's current colors are used.
-void drawRoundRect(CGContextRef context, CGRect rect) {
-    CGFloat radius = 7;
-    CGContextBeginPath(context);
-	CGContextMoveToPoint(context, CGRectGetMinX(rect) + radius, CGRectGetMinY(rect));
-    CGContextAddArc(context, CGRectGetMaxX(rect) - radius, CGRectGetMinY(rect) + radius, radius, 3 * M_PI / 2, 0, 0);
-    CGContextAddArc(context, CGRectGetMaxX(rect) - radius, CGRectGetMaxY(rect) - radius, radius, 0, M_PI / 2, 0);
-    CGContextAddArc(context, CGRectGetMinX(rect) + radius, CGRectGetMaxY(rect) - radius, radius, M_PI / 2, M_PI, 0);
-    CGContextAddArc(context, CGRectGetMinX(rect) + radius, CGRectGetMinY(rect) + radius, radius, M_PI, 3 * M_PI / 2, 0);	
-    CGContextClosePath(context);
-    CGContextDrawPath(context, kCGPathFillStroke);
-}
-
 @implementation ColorSwatchView
 
-@synthesize swatchColor;
-
-- (void)drawRect:(CGRect)rect {
-    // We only draw when we're drawing the whole swatch. Maybe there's a problem with this?
-    if (rect.size.width==self.frame.size.width){
-
-        CGContextRef currentContext = UIGraphicsGetCurrentContext();
-
-        CGColorSpaceRef rgba = CGColorSpaceCreateDeviceRGB();
-        
-        CGColorRef borderColor = [[UIColor grayColor] CGColor];
-        
-        CGFloat channelsFill[] = {1.0,1.0,1.0,1.0};
-
-        CGColorRef backgroundFill;
-        if (swatchColor!=nil) {
-            backgroundFill = [swatchColor CGColor];
-        } else {
-            backgroundFill = CGColorCreate(rgba, channelsFill);
-        }
-        
-        CGContextSetFillColorWithColor(currentContext, backgroundFill);
-        CGContextSetLineWidth(currentContext, 1);
-        CGContextSetStrokeColorWithColor(currentContext, borderColor);
-        
-        CGRect newRect = CGRectMake(rect.origin.x+1, rect.origin.y+1, rect.size.width-2, rect.size.height-2);
-        drawRoundRect(currentContext, newRect);
-        
-        //
-        // Clean-up
-        //
-        CGColorSpaceRelease(rgba);
-        
-        if (swatchColor==nil) {
-            CGColorRelease(backgroundFill);
-        }
-        // I don't think we need to release the border color since we didn't really create it
-        // Releasing causes a fault, so I think we don't really own this ColorRef.
-        //CGColorRelease(borderColor);
-    }
+-(id)initWithCoder:(NSCoder *)aDecoder {
+  self = [super initWithCoder:aDecoder];
+  if (self) {
+    [self setupLayers];
+  }
+  return self;
 }
 
+-(void)setupLayers {
+  CALayer *layer = self.layer;
+  [layer setBackgroundColor:self.swatchColor.CGColor];
+  [layer setCornerRadius:7];
+  [layer setBorderWidth:1.0f];
+  [layer setBorderColor:[UIColor grayColor].CGColor];
+}
+
+-(void)setSwatchColor:(UIColor *)swatchColor {
+  if (_swatchColor != swatchColor) {
+    [swatchColor retain];
+    [_swatchColor release];
+    _swatchColor = swatchColor;
+    [self.layer setBackgroundColor:_swatchColor.CGColor];
+  }
+}
 
 - (void)dealloc {
     self.swatchColor = nil;
     [super dealloc];
 }
-
 
 @end

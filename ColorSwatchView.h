@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ColorSwatchView : UIView {
-    UIColor *swatchColor;
-}
+@interface ColorSwatchView : UIView
 
 @property (readwrite, retain, nonatomic) UIColor *swatchColor;
 
