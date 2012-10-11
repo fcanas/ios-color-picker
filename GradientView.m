@@ -60,36 +60,24 @@
 
 
 - (void)drawRect:(CGRect)rect {
-    // Drawing code
-	
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
 	// The clipping rects we plan to use, which also defines the locations of each gradient
-	CGRect clips[] =
-	{
-		CGRectMake(0.0, 0.0, self.frame.size.width, self.frame.size.height),
-		//self.frame,
-	};
+	CGRect clips = CGRectMake(0.0, 0.0, self.frame.size.width, self.frame.size.height);
 	
-	CGPoint points[] =
+	CGPoint endPoints[] =
 	{
 		CGPointMake(0,0),
 		CGPointMake(self.frame.size.width,0),
 	};
-	// Linear Gradients
-	CGPoint start, end;
 	
 	// Clip to area to draw the gradient, and draw it. Since we are clipping, we save the graphics state
 	// so that we can revert to the previous larger area.
 	CGContextSaveGState(context);
-	CGContextClipToRect(context, clips[0]);
+	CGContextClipToRect(context, clips);
 	
-	start = points[0];
-	end = points[1];
-	CGContextDrawLinearGradient(context, gradient, start, end, 0);
+	CGContextDrawLinearGradient(context, gradient, endPoints[0], endPoints[1], 0);
 	CGContextRestoreGState(context);
-	
-	CGContextSaveGState(context);
 }
 
 - (void)dealloc {
