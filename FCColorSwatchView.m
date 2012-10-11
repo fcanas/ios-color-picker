@@ -6,10 +6,10 @@
 //  Copyright 2010 Fabián Cañas. All rights reserved.
 //
 
-#import "ColorSwatchView.h"
+#import "FCColorSwatchView.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation ColorSwatchView
+@implementation FCColorSwatchView
 
 -(id)initWithCoder:(NSCoder *)aDecoder {
   self = [super initWithCoder:aDecoder];
