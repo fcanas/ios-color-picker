@@ -34,8 +34,6 @@
 
 @interface FCBrightDarkGradView : UIView
 
-@property (readwrite,nonatomic,retain) UIColor *theColor;
-
-- (void) setupGradient;
+@property (readwrite,nonatomic,retain) UIColor *color;
 
 @end

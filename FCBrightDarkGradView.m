@@ -40,10 +40,20 @@
 
 @implementation FCBrightDarkGradView
 
+-(void)setColor:(UIColor *)color {
+  if (_color != color) {
+    [color retain];
+    [_color release];
+    _color = color;
+    [self setupGradient];
+    [self setNeedsDisplay];
+  }
+}
+
 - (void) setupGradient { 
 	// Create a color equivalent to the current color with brightness maximized
-	const CGFloat *c = CGColorGetComponents([[UIColor colorWithHue:[_theColor hue]
-                                                      saturation:[_theColor saturation]
+	const CGFloat *c = CGColorGetComponents([[UIColor colorWithHue:[_color hue]
+                                                      saturation:[_color saturation]
                                                       brightness:1.0
                                                       alpha:1.0] CGColor]);
 	CGFloat colors[] =
@@ -85,7 +95,7 @@
 
 - (void)dealloc {
   CGGradientRelease(gradient);
-  self.theColor = nil;
+  self.color = nil;
   [super dealloc];
 }
 
