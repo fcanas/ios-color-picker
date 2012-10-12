@@ -43,18 +43,7 @@
 }
 
 - (IBAction) cancelColorSelection {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	if (defaultsKey==nil) {
-        defaultsKey = @"";
-    }
-    
-    NSData *colorData= [userDefaults objectForKey:defaultsKey];
-    UIColor *color = nil;
-    if (colorData!=nil) {
-        color = (UIColor*)[NSKeyedUnarchiver unarchiveObjectWithData:colorData];
-    }
-    
-    [delegate colorPickerViewController:self didSelectColor:color];
+  [delegate colorPickerViewControllerDidCancel:self];
 }
 
 // Housekeeping actions when a view as unloaded

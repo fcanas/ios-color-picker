@@ -15,6 +15,8 @@
 
 - (void)colorPickerViewController:(ColorPickerViewController *)colorPicker didSelectColor:(UIColor *)color;
 
+- (void)colorPickerViewControllerDidCancel:(ColorPickerViewController *)colorPicker;
+
 @end
 
 @interface ColorPickerViewController : UIViewController {
