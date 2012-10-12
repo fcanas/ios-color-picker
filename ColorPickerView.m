@@ -20,6 +20,8 @@
 	CGFloat currentSaturation;
 	
 	UIColor *currentColor;
+  
+  CGRect gradientRect;
 }
 @end
 
@@ -29,20 +31,15 @@
 @synthesize currentSaturation;
 @synthesize currentBrightness;
 
-- (id)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        // Initialization code
-    }
-    return self;
-}
-
 - (id)initWithCoder:(NSCoder*)coder  {
 	if (self = [super initWithCoder:coder]) {
+    
+    gradientRect = CGRectMake(10, 404, 300, 40);
 		
-		gradientView = [[FCBrightDarkGradView alloc] initWithFrame:kBrightnessGradientPlacent];
-		//[gradientView setTheColor:[UIColor yellowColor]];
+		gradientView = [[FCBrightDarkGradView alloc] initWithFrame:gradientRect];
 		[self addSubview:gradientView];
 		[self sendSubviewToBack:gradientView];
+    
 		[self setMultipleTouchEnabled:YES];
 		colorMatrixFrame = kHueSatFrame;
 		UIImageView *hueSatImage = [[UIImageView alloc] initWithFrame:colorMatrixFrame];
@@ -50,9 +47,8 @@
 		[self addSubview:hueSatImage];
 		[self sendSubviewToBack:hueSatImage];
 		[hueSatImage release];
+    
 		currentBrightness = kInitialBrightness;
-		
-		currentColor = [[UIColor alloc]init];
 	}
 	return self;
 }
@@ -72,8 +68,7 @@
     // currentBrightness = 1.0-(position.x/gradientView.frame.size.width) + kBrightnessEpsilon;
     
     brightnessPosition.y = kBrightBarYCenter;
-    [gradientView setTheColor:color];
-    //[showColor setBackgroundColor:currentColor];
+    [gradientView setColor:color];
     showColor.swatchColor = currentColor;
     
     crossHairs.center = hueSatPosition;
@@ -91,18 +86,14 @@
 									brightness: kInitialBrightness 
 									alpha:1.0];
 	
-	[gradientView setTheColor:forGradient];
-	[gradientView setupGradient];
-	[gradientView setNeedsDisplay];
+	[gradientView setColor:forGradient];
 
 	currentColor  = [UIColor colorWithHue:currentHue 
 									   saturation:currentSaturation 
 									   brightness:currentBrightness
 									   alpha:1.0];
 	
-	//[showColor setBackgroundColor:currentColor];
-    showColor.swatchColor = currentColor;
-    [showColor setNeedsDisplay];
+  showColor.swatchColor = currentColor;
 }
 
 
@@ -115,43 +106,20 @@
 										brightness:currentBrightness
 											 alpha:1.0];
 	
-	//[showColor setBackgroundColor:forColorView];
-    showColor.swatchColor = forColorView;
-    [showColor setNeedsDisplay];
-}
-
-//Touch parts : 
-
-// Scales down the view and moves it to the new position. 
-- (void)animateView:(UIImageView *)theView toPosition:(CGPoint) thePosition
-{
-	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:kAnimationDuration];
-	// Set the center to the final postion
-	theView.center = thePosition;
-	// Set the transform back to the identity, thus undoing the previous scaling effect.
-	theView.transform = CGAffineTransformIdentity;
-	[UIView commitAnimations];	
+  showColor.swatchColor = forColorView;
 }
 
 -(void) dispatchTouchEvent:(CGPoint)position
 {
-	if (CGRectContainsPoint(colorMatrixFrame,position))
-	{
-		[self animateView:crossHairs toPosition: position];
+	if (CGRectContainsPoint(colorMatrixFrame,position)) {
+    crossHairs.center = position;
+    
 		[self updateHueSatWithMovement:position];
-		
 	}
-	else if (CGRectContainsPoint(gradientView.frame, position))
-	{
-		CGPoint newPos = CGPointMake(position.x,kBrightBarYCenter);
-		[self animateView:brightnessBar toPosition: newPos];
+	else if (CGRectContainsPoint(gradientView.frame, position)) {
+    brightnessBar.center = CGPointMake(position.x,gradientRect.origin.y + gradientRect.size.height/2);
 		[self updateBrightnessWithMovement:position];
 	}
-	else
-	{
-	}
-	
 }
 
 
@@ -172,14 +140,6 @@
 		[self dispatchTouchEvent:[touch locationInView:self]];
 	}
 	
-}
-
-- (void)drawRect:(CGRect)rect {
-	
-	[gradientView setupGradient];
-	[gradientView setNeedsDisplay];
-	[self sendSubviewToBack:showColor];
-
 }
 
 - (UIColor *) getColorShown {

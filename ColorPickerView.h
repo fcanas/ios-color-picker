@@ -24,6 +24,5 @@
 
 - (UIColor *) getColorShown;
 - (void) setColor:(UIColor *)color;
-- (void) animateView:(UIImageView *)theView toPosition:(CGPoint) thePosition;
 
 @end
