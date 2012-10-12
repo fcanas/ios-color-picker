@@ -29,8 +29,6 @@
 //    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#define kBrightnessGradientPlacent CGRectMake(10, 404, 300, 40)
-
 #define kHueSatImage @"colormap.png"
 
 #define kXAxisOffset 11.0

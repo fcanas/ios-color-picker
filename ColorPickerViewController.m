@@ -16,33 +16,18 @@
 @synthesize delegate, chooseButton;
 @synthesize defaultsKey;
 
-NSString *keyForHue = @"hue";
-NSString *keyForSat = @"sat";
-NSString *keyForBright = @"bright";
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-	NSUserDefaults *saveColors = [NSUserDefaults standardUserDefaults];
-	if (defaultsKey==nil) {
-        self.defaultsKey = @"";
-    }
-    
-    NSData *colorData= [saveColors objectForKey:defaultsKey];
-    UIColor *color;
-    if (colorData!=nil) {
-        color = (UIColor*)[NSKeyedUnarchiver unarchiveObjectWithData:colorData];
-    }
 		
-    [self moveToDefault];   // Move the crosshair to the default setting
+    [self updateCrosshairPositions];
 }
 
--(void) moveToDefault {
+-(void) updateCrosshairPositions {
   ColorPickerView *theView = (ColorPickerView*) [self view];
   NSUserDefaults *saveColors = [NSUserDefaults standardUserDefaults];
   NSData *colorData= [saveColors objectForKey:defaultsKey];
-  UIColor *color;
+  UIColor *color = nil;
   if (colorData!=nil) {
       color = (UIColor*)[NSKeyedUnarchiver unarchiveObjectWithData:colorData];
   }
@@ -64,7 +49,7 @@ NSString *keyForBright = @"bright";
     }
     
     NSData *colorData= [userDefaults objectForKey:defaultsKey];
-    UIColor *color;
+    UIColor *color = nil;
     if (colorData!=nil) {
         color = (UIColor*)[NSKeyedUnarchiver unarchiveObjectWithData:colorData];
     }

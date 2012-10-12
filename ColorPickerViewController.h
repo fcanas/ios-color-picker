@@ -23,14 +23,6 @@
     IBOutlet UIButton *chooseButton;
 }
 
-// Use this member to update the display after the default color value
-// was changed.
-// This is required when e.g. the view controller is kept in memory
-// and is re-used for another color value selection
-// Automatically called after construction, so no need to do it here.
--(void) moveToDefault;
-
-
 @property(nonatomic,assign)	id<ColorPickerViewControllerDelegate> delegate;
 @property(readwrite,nonatomic,retain) NSString *defaultsKey;
 @property(readwrite,nonatomic,retain) IBOutlet UIButton *chooseButton;
