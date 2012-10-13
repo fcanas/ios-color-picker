@@ -2,25 +2,24 @@
 //  ColorPickerViewController.h
 //  ColorPicker
 //
-//  Created by Gilly Dekel on 23/3/09.
-//  Extended by Fabián Cañas August 2010.
-//  Copyright 2010. All rights reserved.
+//  Created by Fabián Cañas
+//  Based on work by Gilly Dekel on 23/3/09
+//  Copyright 2010-2012. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class ColorPickerViewController, FCBrightDarkGradView, FCColorSwatchView;
-
+@class FCColorPickerViewController, FCBrightDarkGradView, FCColorSwatchView;
 
 @protocol ColorPickerViewControllerDelegate <NSObject>
 
-- (void)colorPickerViewController:(ColorPickerViewController *)colorPicker didSelectColor:(UIColor *)color;
-- (void)colorPickerViewControllerDidCancel:(ColorPickerViewController *)colorPicker;
+- (void)colorPickerViewController:(FCColorPickerViewController *)colorPicker didSelectColor:(UIColor *)color;
+- (void)colorPickerViewControllerDidCancel:(FCColorPickerViewController *)colorPicker;
 
 @end
 
 
-@interface ColorPickerViewController : UIViewController
+@interface FCColorPickerViewController : UIViewController
 
 @property (readwrite, nonatomic, retain) UIColor *color;
 @property (nonatomic,assign)	id<ColorPickerViewControllerDelegate> delegate;

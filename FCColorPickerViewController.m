@@ -2,17 +2,17 @@
 //  ColorPickerViewController.m
 //  ColorPicker
 //
-//  Created by Gilly Dekel on 23/3/09.
-//  Extended by Fabián Cañas August 2010.
-//  Copyright 2010. All rights reserved.
+//  Created by Fabián Cañas
+//  Based on work by Gilly Dekel on 23/3/09
+//  Copyright 2010-2012. All rights reserved.
 //
 
-#import "ColorPickerViewController.h"
+#import "FCColorPickerViewController.h"
 #import "FCBrightDarkGradView.h"
 #import "FCColorSwatchView.h"
 #import "UIColor+HSV.h"
 
-@interface ColorPickerViewController () {
+@interface FCColorPickerViewController () {
 	
 	CGFloat currentBrightness;
 	CGFloat currentHue;
@@ -24,7 +24,7 @@
 @end
 
 
-@implementation ColorPickerViewController
+@implementation FCColorPickerViewController
 
 @synthesize color = _color;
 
