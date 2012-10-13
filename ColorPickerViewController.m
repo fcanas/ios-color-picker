@@ -8,7 +8,6 @@
 //
 
 #import "ColorPickerViewController.h"
-#import "ColorPickerView.h"
 #import "FCBrightDarkGradView.h"
 #import "FCColorSwatchView.h"
 #import "UIColor+HSV.h"

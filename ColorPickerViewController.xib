@@ -351,7 +351,6 @@
 					<string>45.CustomClassName</string>
 					<string>45.IBPluginDependency</string>
 					<string>59.IBPluginDependency</string>
-					<string>6.CustomClassName</string>
 					<string>6.IBPluginDependency</string>
 					<string>73.CustomClassName</string>
 					<string>73.IBPluginDependency</string>
@@ -369,7 +368,6 @@
 					<string>FCColorSwatchView</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>ColorPickerView</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>FCBrightDarkGradView</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -393,14 +391,6 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<object class="IBPartialClassDescription">
-					<string key="className">ColorPickerView</string>
-					<string key="superclassName">UIView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ColorPickerView.h</string>
-					</object>
-				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">ColorPickerViewController</string>
 					<string key="superclassName">UIViewController</string>
