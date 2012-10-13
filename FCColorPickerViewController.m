@@ -153,7 +153,6 @@
 		[self updateHueSatWithMovement:position];
 	}
 	else if (CGRectContainsPoint(_gradientView.frame, position)) {
-    NSLog(@"contained in gradient view :%f. %f", position.x, position.y);
     _brightnessBar.center = CGPointMake(position.x, _gradientView.center.y);
 		[self updateBrightnessWithMovement:position];
 	}
