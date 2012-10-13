@@ -31,22 +31,9 @@
 
 #define kHueSatImage @"colormap.png"
 
-#define kXAxisOffset 11.0
-#define kYAxisOffset 120.0
-
-#define kMatrixWidth 298.0
-#define kMatrixHeight 257.0
-
-#define kHueSatFrame CGRectMake(kXAxisOffset, kYAxisOffset, kMatrixWidth, kMatrixHeight)
-#define kColorWindowFrame CGRectMake(66, 0, 188, 44)
-
 #define kInitialBrightness 0.5
 
 #define kBrightnessEpsilon 0.05
 #define kHueEpsilon 0.005
 #define kSatEpsilon 0.005
-
-#define kAnimationDuration 0.4
-
-#define kBrightBarYCenter 423
 

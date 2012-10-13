@@ -11,13 +11,13 @@
 #import "FCColorSwatchView.h"
 
 @class FCBrightDarkGradView;
-@interface ColorPickerView : UIView {
-	FCBrightDarkGradView *gradientView;
-	IBOutlet FCColorSwatchView *showColor;
-	IBOutlet UIImageView *crossHairs;
-	IBOutlet UIImageView *brightnessBar;
-}
+@interface ColorPickerView : UIView
 
+@property (readwrite, nonatomic, retain) IBOutlet FCBrightDarkGradView *gradientView;
+@property (readwrite, nonatomic, retain) IBOutlet UIImageView *hueSatImage;
+@property (readwrite, nonatomic, retain) IBOutlet UIImageView *crossHairs;
+@property (readwrite, nonatomic, retain) IBOutlet UIImageView *brightnessBar;
+@property (readwrite, nonatomic, retain) IBOutlet FCColorSwatchView *showColor;
 @property (readwrite) CGFloat currentBrightness;
 @property (readwrite) CGFloat currentHue;
 @property (readwrite) CGFloat currentSaturation;
