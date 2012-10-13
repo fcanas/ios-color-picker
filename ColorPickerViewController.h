@@ -9,29 +9,30 @@
 
 #import <UIKit/UIKit.h>
 
-@class ColorPickerViewController;
+@class ColorPickerViewController, FCBrightDarkGradView, FCColorSwatchView;
+
 
 @protocol ColorPickerViewControllerDelegate <NSObject>
 
 - (void)colorPickerViewController:(ColorPickerViewController *)colorPicker didSelectColor:(UIColor *)color;
-
 - (void)colorPickerViewControllerDidCancel:(ColorPickerViewController *)colorPicker;
 
 @end
 
-@interface ColorPickerViewController : UIViewController {
-    id<ColorPickerViewControllerDelegate> delegate;
-    NSString *defaultsKey;
-    IBOutlet UIButton *chooseButton;
-}
 
-@property(nonatomic,assign)	id<ColorPickerViewControllerDelegate> delegate;
-@property(readwrite,nonatomic,retain) NSString *defaultsKey;
-@property(readwrite,nonatomic,retain) IBOutlet UIButton *chooseButton;
+@interface ColorPickerViewController : UIViewController
+
+@property (readwrite, nonatomic, retain) UIColor *color;
+@property (nonatomic,assign)	id<ColorPickerViewControllerDelegate> delegate;
+
+@property (readwrite, nonatomic, retain) IBOutlet FCBrightDarkGradView *gradientView;
+@property (readwrite, nonatomic, retain) IBOutlet UIImageView *hueSatImage;
+@property (readwrite, nonatomic, retain) IBOutlet UIImageView *crossHairs;
+@property (readwrite, nonatomic, retain) IBOutlet UIImageView *brightnessBar;
+@property (readwrite, nonatomic, retain) IBOutlet FCColorSwatchView *colorSwatch;
 
 - (IBAction) chooseSelectedColor;
 - (IBAction) cancelColorSelection;
-- (UIColor *) getSelectedColor;
 
 @end
 
