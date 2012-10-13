@@ -43,6 +43,11 @@
   _colorSwatch.swatchColor = _color;
 }
 
+-(void)viewWillLayoutSubviews {
+  [self updateBrightnessPosition];
+  [self updateCrosshairPosition];
+}
+
 #pragma mark -
 #pragma mark Color Manipulation
 
