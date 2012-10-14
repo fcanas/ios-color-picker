@@ -1,6 +1,14 @@
 # iOS Color Picker
 
-A reusable HSV color picker component for iOS. 
+A reusable color picker component for iOS. 
+
+[iphone5]
+
+[ipad]
+
+[iphone4]
+
+[ipad-full]
 
 ## Dependencies
 
@@ -11,3 +19,8 @@ When using [CocoaPods](http://cocoapods.org), the `UIColor-Utilities` dependency
 ## Example Usage
 
 [iOS Color Picker Example](https://github.com/fcanas/ios-color-picker-example)
+
+[iphone5]: http://www.fabiancanas.com/img/color-picker-iphone-5.png "iOS Color Picker on an iPhone 5"
+[ipad]: http://www.fabiancanas.com/img/color-picker-ipad.png "iOS Color Picker on an iPad"
+[iphone4]: http://www.fabiancanas.com/img/color-picker-iphone-4.png "iOS Color Picker on an iPhone 4"
+[ipad-full]: http://www.fabiancanas.com/img/color-picker-ipad-landscape.png "iOS Color Picker full screen on an iPad"
