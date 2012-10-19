@@ -55,24 +55,26 @@
   return _color;
 }
 
--(void) setColor:(UIColor *)newColor {
+-(void) _setColor:(UIColor *)newColor {
   if (_color != newColor) {
     [newColor retain];
     [_color release];
     _color = newColor;
-    
     _colorSwatch.swatchColor = _color;
-    [self updateBrightnessPosition];
-    [self updateCrosshairPosition];
     [self updateGradientColor];
   }
+}
+
+-(void) setColor:(UIColor *)newColor {
+  [self _setColor:newColor];
+  [self updateBrightnessPosition];
+  [self updateCrosshairPosition];
 }
 
 -(void)updateBrightnessPosition {
   currentBrightness = _color.brightness;
   CGPoint brightnessPosition;
   brightnessPosition.x = (1.0-currentBrightness)*_gradientView.frame.size.width + _gradientView.frame.origin.x;
-  
   brightnessPosition.y = _gradientView.center.y;
   _brightnessBar.center = brightnessPosition;
 }
@@ -82,7 +84,7 @@
   currentSaturation = _color.saturation;
   
   CGPoint hueSatPosition;
-
+  
   hueSatPosition.x = (currentHue*_hueSatImage.frame.size.width)+_hueSatImage.frame.origin.x;
   hueSatPosition.y = (1.0-currentSaturation)*_hueSatImage.frame.size.height+_hueSatImage.frame.origin.y;
   
@@ -103,10 +105,11 @@
 	currentHue = (position.x-_hueSatImage.frame.origin.x)/_hueSatImage.frame.size.width;
 	currentSaturation = 1.0 -  (position.y-_hueSatImage.frame.origin.y)/_hueSatImage.frame.size.height;
   
-	self.color  = [UIColor colorWithHue:currentHue
-                            saturation:currentSaturation
-                            brightness:currentBrightness
-                                alpha:1.0];
+	UIColor *_tcolor = [UIColor colorWithHue:currentHue
+                                saturation:currentSaturation
+                                brightness:currentBrightness
+                                     alpha:1.0];
+  [self _setColor:_tcolor];
 	
   _colorSwatch.swatchColor = _color;
 }
@@ -115,10 +118,11 @@
 	
 	currentBrightness = 1.0 - ((position.x - _gradientView.frame.origin.x)/_gradientView.frame.size.width) ;
 	
-	self.color  = [UIColor colorWithHue:currentHue
-                           saturation:currentSaturation
-                           brightness:currentBrightness
-                                alpha:1.0];
+	UIColor *_tcolor = [UIColor colorWithHue:currentHue
+                                saturation:currentSaturation
+                                brightness:currentBrightness
+                                     alpha:1.0];
+  [self _setColor:_tcolor];
 	
   _colorSwatch.swatchColor = _color;
 }
@@ -162,7 +166,7 @@
 #pragma mark IBActions
 
 - (IBAction) chooseSelectedColor {
-    [_delegate colorPickerViewController:self didSelectColor:self.color];
+  [_delegate colorPickerViewController:self didSelectColor:self.color];
 }
 
 - (IBAction) cancelColorSelection {
