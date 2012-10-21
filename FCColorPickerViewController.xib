@@ -122,7 +122,6 @@
 						<string key="NSFrame">{{11, 425}, {298, 40}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -233,19 +232,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">colorSwatch</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="204055690"/>
-					</object>
-					<int key="connectionID">82</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">brightnessBar</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="957179927"/>
 					</object>
 					<int key="connectionID">80</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">swatch</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="204055690"/>
+					</object>
+					<int key="connectionID">83</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -392,7 +391,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">82</int>
+			<int key="maxID">83</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -445,18 +444,18 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>brightnessBar</string>
-							<string>colorSwatch</string>
 							<string>crossHairs</string>
 							<string>gradientView</string>
 							<string>hueSatImage</string>
+							<string>swatch</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIImageView</string>
-							<string>FCColorSwatchView</string>
 							<string>UIImageView</string>
 							<string>FCBrightDarkGradView</string>
 							<string>UIImageView</string>
+							<string>FCColorSwatchView</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -464,20 +463,16 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>brightnessBar</string>
-							<string>colorSwatch</string>
 							<string>crossHairs</string>
 							<string>gradientView</string>
 							<string>hueSatImage</string>
+							<string>swatch</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
 								<string key="name">brightnessBar</string>
 								<string key="candidateClassName">UIImageView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">colorSwatch</string>
-								<string key="candidateClassName">FCColorSwatchView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">crossHairs</string>
@@ -490,6 +485,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">hueSatImage</string>
 								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">swatch</string>
+								<string key="candidateClassName">FCColorSwatchView</string>
 							</object>
 						</object>
 					</object>
