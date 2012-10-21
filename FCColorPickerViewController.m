@@ -13,7 +13,6 @@
 #import "UIColor+HSV.h"
 
 @interface FCColorPickerViewController () {
-	
 	CGFloat currentBrightness;
 	CGFloat currentHue;
 	CGFloat currentSaturation;
@@ -23,18 +22,17 @@
 
 @end
 
-
 @implementation FCColorPickerViewController
 
 @synthesize color = _color;
 
--(void)viewDidLoad {
+- (void)viewDidLoad {
   [super viewDidLoad];
   [self.view bringSubviewToFront:_crossHairs];
   [self.view bringSubviewToFront:_brightnessBar];
 }
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   [self setColor:_color];
   [self updateBrightnessPosition];
@@ -43,7 +41,7 @@
   _swatch.color = _color;
 }
 
--(void)viewWillLayoutSubviews {
+- (void)viewWillLayoutSubviews {
   [self updateBrightnessPosition];
   [self updateCrosshairPosition];
 }
@@ -51,11 +49,11 @@
 #pragma mark -
 #pragma mark Color Manipulation
 
-- (UIColor *) color {
+- (UIColor *)color {
   return _color;
 }
 
--(void) _setColor:(UIColor *)newColor {
+- (void)_setColor:(UIColor *)newColor {
   if (_color != newColor) {
     [newColor retain];
     [_color release];
@@ -65,13 +63,13 @@
   }
 }
 
--(void) setColor:(UIColor *)newColor {
+- (void)setColor:(UIColor *)newColor {
   [self _setColor:newColor];
   [self updateBrightnessPosition];
   [self updateCrosshairPosition];
 }
 
--(void)updateBrightnessPosition {
+- (void)updateBrightnessPosition {
   currentBrightness = _color.brightness;
   CGPoint brightnessPosition;
   brightnessPosition.x = (1.0-currentBrightness)*_gradientView.frame.size.width + _gradientView.frame.origin.x;
@@ -79,7 +77,7 @@
   _brightnessBar.center = brightnessPosition;
 }
 
--(void)updateCrosshairPosition {
+- (void)updateCrosshairPosition {
   currentHue = _color.hue;
   currentSaturation = _color.saturation;
   
@@ -91,7 +89,7 @@
   _crossHairs.center = hueSatPosition;
 }
 
--(void)updateGradientColor {
+- (void)updateGradientColor {
   UIColor *gradientColor = [UIColor colorWithHue: currentHue
                                       saturation: currentSaturation
                                       brightness: 0.5
@@ -100,7 +98,7 @@
 	[_gradientView setColor:gradientColor];
 }
 
-- (void) updateHueSatWithMovement : (CGPoint) position {
+- (void)updateHueSatWithMovement : (CGPoint) position {
   
 	currentHue = (position.x-_hueSatImage.frame.origin.x)/_hueSatImage.frame.size.width;
 	currentSaturation = 1.0 -  (position.y-_hueSatImage.frame.origin.y)/_hueSatImage.frame.size.height;
@@ -114,7 +112,7 @@
   _swatch.color = _color;
 }
 
-- (void) updateBrightnessWithMovement : (CGPoint) position {
+- (void)updateBrightnessWithMovement : (CGPoint) position {
 	
 	currentBrightness = 1.0 - ((position.x - _gradientView.frame.origin.x)/_gradientView.frame.size.width) ;
 	
@@ -131,26 +129,21 @@
 #pragma mark Touch Handling
 
 // Handles the start of a touch
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-	
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	for (UITouch *touch in touches) {
 		[self dispatchTouchEvent:[touch locationInView:self.view]];
   }
 }
 
 // Handles the continuation of a touch.
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-  
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
 	for (UITouch *touch in touches){
 		[self dispatchTouchEvent:[touch locationInView:self.view]];
 	}
 	
 }
 
--(void) dispatchTouchEvent:(CGPoint)position
-{
+- (void) dispatchTouchEvent:(CGPoint)position {
 	if (CGRectContainsPoint(_hueSatImage.frame,position)) {
     _crossHairs.center = position;
     
@@ -165,11 +158,11 @@
 #pragma mark -
 #pragma mark IBActions
 
-- (IBAction) chooseSelectedColor {
+- (IBAction)chooseSelectedColor {
   [_delegate colorPickerViewController:self didSelectColor:self.color];
 }
 
-- (IBAction) cancelColorSelection {
+- (IBAction)cancelColorSelection {
   [_delegate colorPickerViewControllerDidCancel:self];
 }
 

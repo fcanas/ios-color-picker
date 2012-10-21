@@ -18,7 +18,6 @@
 
 @end
 
-
 @interface FCColorPickerViewController : UIViewController
 
 @property (readwrite, nonatomic, retain) UIColor *color;

@@ -27,23 +27,23 @@
   }
 }
 
-- (void) setupGradient { 
+- (void)setupGradient {
 	// Create a color equivalent to the current color with brightness maximized
 	const CGFloat *c = CGColorGetComponents([[UIColor colorWithHue:[_color hue]
                                                       saturation:[_color saturation]
                                                       brightness:1.0
-                                                      alpha:1.0] CGColor]);
+                                                           alpha:1.0] CGColor]);
 	CGFloat colors[] =
-	{		
+	{
 		c[0],c[1],c[2],1.0,
 		0.0/255.0,0.0/255.0,0.0/255.0,1.0, // black
 	};
 	
 	CGColorSpaceRef rgb = CGColorSpaceCreateDeviceRGB();
 	
-    if (gradient!=nil) {
-        CGGradientRelease(gradient);
-    }
+  if (gradient!=nil) {
+    CGGradientRelease(gradient);
+  }
 	gradient = CGGradientCreateWithColorComponents(rgb, colors, NULL, sizeof(colors)/(sizeof(colors[0])*4));
 	CGColorSpaceRelease(rgb);
 	
