@@ -21,23 +21,23 @@
 
 -(void)setupLayers {
   CALayer *layer = self.layer;
-  [layer setBackgroundColor:self.swatchColor.CGColor];
+  [layer setBackgroundColor:self.color.CGColor];
   [layer setCornerRadius:7];
   [layer setBorderWidth:1.0f];
   [layer setBorderColor:[UIColor grayColor].CGColor];
 }
 
--(void)setSwatchColor:(UIColor *)swatchColor {
-  if (_swatchColor != swatchColor) {
+-(void)setColor:(UIColor *)swatchColor {
+  if (_color != swatchColor) {
     [swatchColor retain];
-    [_swatchColor release];
-    _swatchColor = swatchColor;
-    [self.layer setBackgroundColor:_swatchColor.CGColor];
+    [_color release];
+    _color = swatchColor;
+    [self.layer setBackgroundColor:_color.CGColor];
   }
 }
 
 - (void)dealloc {
-    self.swatchColor = nil;
+    self.color = nil;
     [super dealloc];
 }
 

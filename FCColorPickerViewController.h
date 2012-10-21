@@ -28,7 +28,7 @@
 @property (readwrite, nonatomic, retain) IBOutlet UIImageView *hueSatImage;
 @property (readwrite, nonatomic, retain) IBOutlet UIImageView *crossHairs;
 @property (readwrite, nonatomic, retain) IBOutlet UIImageView *brightnessBar;
-@property (readwrite, nonatomic, retain) IBOutlet FCColorSwatchView *colorSwatch;
+@property (readwrite, nonatomic, retain) IBOutlet FCColorSwatchView *swatch;
 
 - (IBAction) chooseSelectedColor;
 - (IBAction) cancelColorSelection;

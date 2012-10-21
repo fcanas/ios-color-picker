@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface FCColorSwatchView : UIView
 
-@property (readwrite, retain, nonatomic) UIColor *swatchColor;
+@property (readwrite, retain, nonatomic) UIColor *color;
 
 @end

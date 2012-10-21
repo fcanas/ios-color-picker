@@ -40,7 +40,7 @@
   [self updateBrightnessPosition];
   [self updateGradientColor];
   [self updateCrosshairPosition];
-  _colorSwatch.swatchColor = _color;
+  _swatch.color = _color;
 }
 
 -(void)viewWillLayoutSubviews {
@@ -60,7 +60,7 @@
     [newColor retain];
     [_color release];
     _color = newColor;
-    _colorSwatch.swatchColor = _color;
+    _swatch.color = _color;
     [self updateGradientColor];
   }
 }
@@ -111,7 +111,7 @@
                                      alpha:1.0];
   [self _setColor:_tcolor];
 	
-  _colorSwatch.swatchColor = _color;
+  _swatch.color = _color;
 }
 
 - (void) updateBrightnessWithMovement : (CGPoint) position {
@@ -124,7 +124,7 @@
                                      alpha:1.0];
   [self _setColor:_tcolor];
 	
-  _colorSwatch.swatchColor = _color;
+  _swatch.color = _color;
 }
 
 #pragma mark -
