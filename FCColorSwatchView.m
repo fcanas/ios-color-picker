@@ -19,6 +19,22 @@
   return self;
 }
 
+- (id)initWithFrame:(CGRect)frame {
+  self = [super initWithFrame:frame];
+  if (self) {
+    [self setupLayers];
+  }
+  return self;
+}
+
+- (id)init {
+  self = [super init];
+  if (self) {
+    [self setupLayers];
+  }
+  return self;
+}
+
 -(void)setupLayers {
   CALayer *layer = self.layer;
   [layer setBackgroundColor:self.color.CGColor];
