@@ -20,3 +20,6 @@ When using [CocoaPods](http://cocoapods.org), the `UIColor-Utilities` dependency
 [ipad]: http://www.fabiancanas.com/img/color-picker-ipad.png "iOS Color Picker on an iPad"
 [iphone4]: http://www.fabiancanas.com/img/color-picker-iphone-4.png "iOS Color Picker on an iPhone 4"
 [ipad-full-screen]: http://www.fabiancanas.com/img/color-picker-ipad-landscape.png "iOS Color Picker full screen on an iPad"
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fcanas/ios-color-picker/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
