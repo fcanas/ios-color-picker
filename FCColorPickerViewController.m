@@ -105,7 +105,7 @@
 	[_gradientView setColor:gradientColor];
 }
 
-- (void)updateHueSatWithMovement : (CGPoint) position {
+- (void)updateHueSatWithMovement:(CGPoint) position {
     
 	currentHue = (position.x-_hueSatImage.frame.origin.x)/_hueSatImage.frame.size.width;
 	currentSaturation = 1.0 -  (position.y-_hueSatImage.frame.origin.y)/_hueSatImage.frame.size.height;
@@ -119,7 +119,7 @@
     _swatch.color = _color;
 }
 
-- (void)updateBrightnessWithMovement : (CGPoint) position {
+- (void)updateBrightnessWithMovement:(CGPoint) position {
 	
 	currentBrightness = 1.0 - ((position.x - _gradientView.frame.origin.x)/_gradientView.frame.size.width) ;
 	
@@ -147,16 +147,13 @@
 	for (UITouch *touch in touches){
 		[self dispatchTouchEvent:[touch locationInView:self.view]];
 	}
-	
 }
 
-- (void) dispatchTouchEvent:(CGPoint)position {
+- (void)dispatchTouchEvent:(CGPoint)position {
 	if (CGRectContainsPoint(_hueSatImage.frame,position)) {
         _crossHairs.center = position;
-        
 		[self updateHueSatWithMovement:position];
-	}
-	else if (CGRectContainsPoint(_gradientView.frame, position)) {
+	} else if (CGRectContainsPoint(_gradientView.frame, position)) {
         _brightnessBar.center = CGPointMake(position.x, _gradientView.center.y);
 		[self updateBrightnessWithMovement:position];
 	}
