@@ -10,6 +10,6 @@
 
 @interface FCBrightDarkGradView : UIView
 
-@property (readwrite,nonatomic,retain) UIColor *color;
+@property (readwrite,nonatomic,copy) UIColor *color;
 
 @end

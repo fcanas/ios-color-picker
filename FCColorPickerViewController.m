@@ -16,15 +16,13 @@
 	CGFloat currentBrightness;
 	CGFloat currentHue;
 	CGFloat currentSaturation;
-  
-  UIColor *_color;
 }
 
-@property (readwrite, nonatomic, retain) IBOutlet FCBrightDarkGradView *gradientView;
-@property (readwrite, nonatomic, retain) IBOutlet UIImageView *hueSatImage;
-@property (readwrite, nonatomic, retain) IBOutlet UIImageView *crossHairs;
-@property (readwrite, nonatomic, retain) IBOutlet UIImageView *brightnessBar;
-@property (readwrite, nonatomic, retain) IBOutlet FCColorSwatchView *swatch;
+@property (readwrite, nonatomic, strong) IBOutlet FCBrightDarkGradView *gradientView;
+@property (readwrite, nonatomic, strong) IBOutlet UIImageView *hueSatImage;
+@property (readwrite, nonatomic, strong) IBOutlet UIImageView *crossHairs;
+@property (readwrite, nonatomic, strong) IBOutlet UIImageView *brightnessBar;
+@property (readwrite, nonatomic, strong) IBOutlet FCColorSwatchView *swatch;
 
 - (IBAction) chooseSelectedColor;
 - (IBAction) cancelColorSelection;
@@ -32,8 +30,6 @@
 @end
 
 @implementation FCColorPickerViewController
-
-@synthesize color = _color;
 
 + (instancetype)colorPicker {
   return [[FCColorPickerViewController alloc] initWithNibName:@"FCColorPickerViewController" bundle:nil];
@@ -64,25 +60,18 @@
   [self updateCrosshairPosition];
 }
 
-#pragma mark -
-#pragma mark Color Manipulation
-
-- (UIColor *)color {
-  return _color;
-}
+#pragma mark - Color Manipulation
 
 - (void)_setColor:(UIColor *)newColor {
-  if (_color != newColor) {
-    [newColor retain];
-    [_color release];
-    _color = newColor;
+  if (![_color isEqual:newColor]) {
+    _color = [newColor copy];
     _swatch.color = _color;
-    [self updateGradientColor];
   }
 }
 
 - (void)setColor:(UIColor *)newColor {
   [self _setColor:newColor];
+  [self updateGradientColor];
   [self updateBrightnessPosition];
   [self updateCrosshairPosition];
 }

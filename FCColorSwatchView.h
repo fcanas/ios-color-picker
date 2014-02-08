@@ -10,6 +10,6 @@
 
 @interface FCColorSwatchView : UIView
 
-@property (readwrite, retain, nonatomic) UIColor *color;
+@property (readwrite, copy, nonatomic) UIColor *color;
 
 @end

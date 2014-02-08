@@ -19,9 +19,7 @@
 
 -(void)setColor:(UIColor *)color {
   if (_color != color) {
-    [color retain];
-    [_color release];
-    _color = color;
+    _color = [color copy];
     [self setupGradient];
     [self setNeedsDisplay];
   }
@@ -72,8 +70,6 @@
 
 - (void)dealloc {
   CGGradientRelease(gradient);
-  self.color = nil;
-  [super dealloc];
 }
 
 @end

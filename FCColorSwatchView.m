@@ -27,14 +27,6 @@
   return self;
 }
 
-- (id)init {
-  self = [super init];
-  if (self) {
-    [self setupLayers];
-  }
-  return self;
-}
-
 -(void)setupLayers {
   CALayer *layer = self.layer;
   [layer setBackgroundColor:self.color.CGColor];
@@ -45,16 +37,9 @@
 
 -(void)setColor:(UIColor *)swatchColor {
   if (_color != swatchColor) {
-    [swatchColor retain];
-    [_color release];
-    _color = swatchColor;
+    _color = [swatchColor copy];
     [self.layer setBackgroundColor:_color.CGColor];
   }
-}
-
-- (void)dealloc {
-    self.color = nil;
-    [super dealloc];
 }
 
 @end

@@ -17,8 +17,9 @@ Pod::Spec.new do |s|
 	}
   s.author       = { "Fabian Canas" => "fcanas@gmail.com" }
   s.source       = { :git => "https://github.com/fcanas/ios-color-picker.git", :tag => "0.0.7"}
-  s.platform     = :ios, '4.3'
+  s.platform     = :ios, '5.0'
   s.source_files = '*.{h,m}'
+  s.requires_arc = true
   s.resources = "Resources/*.png", 'FCColorPickerViewController.xib'
   s.frameworks = 'QuartzCore', 'Foundation', 'UIKit', 'CoreGraphics'
   s.dependency 'UIColor-Utilities', '~> 1.0.1'
