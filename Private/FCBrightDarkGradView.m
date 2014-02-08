@@ -3,7 +3,7 @@
 //  ColorPicker
 //
 //  Created by Fabián Cañas
-//  Copyright 2010-2012. All rights reserved.
+//  Copyright 2010-2014. All rights reserved.
 //
 
 #import "FCBrightDarkGradView.h"

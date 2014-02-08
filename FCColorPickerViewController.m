@@ -4,7 +4,7 @@
 //
 //  Created by Fabián Cañas
 //  Based on work by Gilly Dekel on 23/3/09
-//  Copyright 2010-2012. All rights reserved.
+//  Copyright 2010-2014. All rights reserved.
 //
 
 #import "FCColorPickerViewController.h"
