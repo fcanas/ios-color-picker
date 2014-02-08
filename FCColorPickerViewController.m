@@ -16,6 +16,7 @@
 	CGFloat currentBrightness;
 	CGFloat currentHue;
 	CGFloat currentSaturation;
+    BOOL viewIsLoaded;
 }
 
 @property (readwrite, nonatomic, strong) IBOutlet FCBrightDarkGradView *gradientView;
@@ -39,6 +40,7 @@
     [super viewDidLoad];
     [self.view bringSubviewToFront:_crossHairs];
     [self.view bringSubviewToFront:_brightnessBar];
+    viewIsLoaded = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -48,16 +50,38 @@
     [self updateGradientColor];
     [self updateCrosshairPosition];
     _swatch.color = _color;
-    if (self.backgroundColor != nil) {
-        self.view.backgroundColor = self.backgroundColor;
-    } else {
-        self.view.backgroundColor = [[UIDevice currentDevice] userInterfaceIdiom]==UIUserInterfaceIdiomPhone?[UIColor darkGrayColor]:[UIColor clearColor];
-    }
+    self.tintColor = self.tintColor;
+    self.backgroundColor = self.backgroundColor;
 }
 
 - (void)viewWillLayoutSubviews {
     [self updateBrightnessPosition];
     [self updateCrosshairPosition];
+}
+
+#pragma mark - Appearance
+
+- (void)setTintColor:(UIColor *)tintColor
+{
+    _tintColor = [tintColor copy];
+    if (!viewIsLoaded) {
+        return;
+    }
+    if ([self.view respondsToSelector:@selector(setTintColor:)]) {
+        [self.view setTintColor:_tintColor];
+    }
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+    _backgroundColor = [backgroundColor copy];
+    if (viewIsLoaded) {
+        if (_backgroundColor != nil) {
+            self.view.backgroundColor = _backgroundColor;
+        } else {
+            self.view.backgroundColor = [[UIDevice currentDevice] userInterfaceIdiom]==UIUserInterfaceIdiomPhone?[UIColor darkGrayColor]:[UIColor clearColor];
+        }
+    }
 }
 
 #pragma mark - Color Manipulation

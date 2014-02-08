@@ -49,9 +49,20 @@
 /**
  The view controller's background color.
  
- Changes to this property can be animated. The default value is nil, which results in a dark gray color on iPhones, and a clear color on iPads.
+ The default value is nil, which results in a dark gray color on iPhones, and a clear color on iPads.
+ @see -tintColor
  */
 @property (nonatomic, copy) UIColor *backgroundColor;
+
+/**
+ The view controller's tint color.
+ 
+ Updates to the `tintColor` property are forwarded to the color picker's view. The tint color affects the coloring of the "Choose" and "Cancel" buttons in iOS 7. Below iOS 7, this property has no effect.
+ `tintColor` is initially nil, and not setting it leaves the color picker to inherit its tint color in the normal way for iOS 7.
+ @see -backgroundColor
+ */
+@property (nonatomic, copy) UIColor *tintColor;
+
 
 + (instancetype)colorPicker;
 
