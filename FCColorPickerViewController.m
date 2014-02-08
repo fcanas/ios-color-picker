@@ -52,6 +52,11 @@
   [self updateGradientColor];
   [self updateCrosshairPosition];
   _swatch.color = _color;
+  if (self.backgroundColor != nil) {
+    self.view.backgroundColor = self.backgroundColor;
+  } else {
+      self.view.backgroundColor = [[UIDevice currentDevice] userInterfaceIdiom]==UIUserInterfaceIdiomPhone?[UIColor darkGrayColor]:[UIColor clearColor];
+  }
 }
 
 - (void)viewWillLayoutSubviews {
