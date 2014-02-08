@@ -20,17 +20,11 @@
 
 @interface FCColorPickerViewController : UIViewController
 
-@property (readwrite, nonatomic, retain) UIColor *color;
+@property (readwrite, nonatomic, copy) UIColor *color;
 @property (nonatomic,assign)	id<ColorPickerViewControllerDelegate> delegate;
 
-@property (readwrite, nonatomic, retain) IBOutlet FCBrightDarkGradView *gradientView;
-@property (readwrite, nonatomic, retain) IBOutlet UIImageView *hueSatImage;
-@property (readwrite, nonatomic, retain) IBOutlet UIImageView *crossHairs;
-@property (readwrite, nonatomic, retain) IBOutlet UIImageView *brightnessBar;
-@property (readwrite, nonatomic, retain) IBOutlet FCColorSwatchView *swatch;
 
-- (IBAction) chooseSelectedColor;
-- (IBAction) cancelColorSelection;
++ (instancetype)colorPicker;
 
 @end
 

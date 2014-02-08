@@ -20,11 +20,24 @@
   UIColor *_color;
 }
 
+@property (readwrite, nonatomic, retain) IBOutlet FCBrightDarkGradView *gradientView;
+@property (readwrite, nonatomic, retain) IBOutlet UIImageView *hueSatImage;
+@property (readwrite, nonatomic, retain) IBOutlet UIImageView *crossHairs;
+@property (readwrite, nonatomic, retain) IBOutlet UIImageView *brightnessBar;
+@property (readwrite, nonatomic, retain) IBOutlet FCColorSwatchView *swatch;
+
+- (IBAction) chooseSelectedColor;
+- (IBAction) cancelColorSelection;
+
 @end
 
 @implementation FCColorPickerViewController
 
 @synthesize color = _color;
+
++ (instancetype)colorPicker {
+  return [[FCColorPickerViewController alloc] initWithNibName:@"FCColorPickerViewController" bundle:nil];
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
