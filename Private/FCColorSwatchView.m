@@ -12,34 +12,34 @@
 @implementation FCColorSwatchView
 
 -(id)initWithCoder:(NSCoder *)aDecoder {
-  self = [super initWithCoder:aDecoder];
-  if (self) {
-    [self setupLayers];
-  }
-  return self;
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self setupLayers];
+    }
+    return self;
 }
 
 - (id)initWithFrame:(CGRect)frame {
-  self = [super initWithFrame:frame];
-  if (self) {
-    [self setupLayers];
-  }
-  return self;
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setupLayers];
+    }
+    return self;
 }
 
 -(void)setupLayers {
-  CALayer *layer = self.layer;
-  [layer setBackgroundColor:self.color.CGColor];
-  [layer setCornerRadius:7];
-  [layer setBorderWidth:1.0f];
-  [layer setBorderColor:[UIColor grayColor].CGColor];
+    CALayer *layer = self.layer;
+    [layer setBackgroundColor:self.color.CGColor];
+    [layer setCornerRadius:7];
+    [layer setBorderWidth:1.0f];
+    [layer setBorderColor:[UIColor grayColor].CGColor];
 }
 
 -(void)setColor:(UIColor *)swatchColor {
-  if (_color != swatchColor) {
-    _color = [swatchColor copy];
-    [self.layer setBackgroundColor:_color.CGColor];
-  }
+    if (_color != swatchColor) {
+        _color = [swatchColor copy];
+        [self.layer setBackgroundColor:_color.CGColor];
+    }
 }
 
 @end

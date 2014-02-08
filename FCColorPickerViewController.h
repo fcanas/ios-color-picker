@@ -22,7 +22,7 @@
 - (void)colorPickerViewController:(FCColorPickerViewController *)colorPicker didSelectColor:(UIColor *)color;
 
 /**
- Called on the delegate of `colorPicker` when the user has canceled selecting a color. 
+ Called on the delegate of `colorPicker` when the user has canceled selecting a color.
  
  @param colorPicker The `FCColorPickerViewController` that has canceled picking a color.
  */
