@@ -11,6 +11,12 @@
 
 @class FCColorPickerViewController, FCBrightDarkGradView, FCColorSwatchView;
 
+/**
+ The delegate of an `FCColorPickerViewController` must adopt the `FCColorPickerViewControllerDelegate` protocol.
+ 
+ The primary responsibility of the delegate is hiding or dismissing the picker controller when the picker has finished.
+ The delegate is the object that is told which color the picker picked.
+ */
 @protocol FCColorPickerViewControllerDelegate <NSObject>
 
 /**
@@ -43,6 +49,8 @@
  The object that acts as the delegate of the receiving color picker.
  
  The delegate must adopt the `FCColorPickerViewControllerDelegate` protocol. The delegate is not retained.
+ 
+ @see FCColorPickerViewControllerDelegate protocol
  */
 @property (nonatomic,assign) id<FCColorPickerViewControllerDelegate> delegate;
 
@@ -63,8 +71,19 @@
  */
 @property (nonatomic, copy) UIColor *tintColor;
 
-
+/**
+ Creates and returns a color picker.
+ */
 + (instancetype)colorPicker;
+
+/**
+ Creates and returns a color picker initialized with the provided color and delegate.
+ @paran color The initial value for the color picker's `color` property. The color picker will represent this color when presented.
+ @param delegate An object implementing the `FCColorPickerViewControllerDelegate` protocol to act as the picker's delegate
+ @see -color,
+ @see -delegate
+ */
++ (instancetype)colorPickerWithColor:(UIColor *)color delegate:(id<FCColorPickerViewControllerDelegate>) delegate;
 
 @end
 
