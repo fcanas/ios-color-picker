@@ -97,12 +97,12 @@
     if (![_color isEqual:newColor]) {
         _color = [newColor copy];
         _swatch.color = _color;
+        [self updateGradientColor];
     }
 }
 
 - (void)setColor:(UIColor *)newColor {
     [self _setColor:newColor];
-    [self updateGradientColor];
     [self updateBrightnessPosition];
     [self updateCrosshairPosition];
 }
