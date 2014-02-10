@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "iOS-Color-Picker"
-  s.version      = "0.0.7"
+  s.version      = "1.0.0"
   s.summary      = "An HSL color-picker for the iPhone."
   s.homepage     = "https://github.com/fcanas/ios-color-picker"
   s.license      = {

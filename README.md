@@ -1,25 +1,67 @@
 # iOS Color Picker
 
-A reusable color picker component for iOS. 
+A reusable color picker component for iOS. Works for iPhone, iPad, in modal sheets, popovers... just about anywhere.
 
-## Screenshots
+# Using iOS-Color-Picker
 
-[iphone5] | [ipad] | [iphone4] | [ipad-full-screen]
+## Installation
 
-## Dependencies
+The easiest way to use iOS-Color-Picker is with [CocoaPods](http://cocoapods.org). Add the following line to your `Podfile`.
+
+```
+pod 'iOS-Color-Picker'
+```
+
+## Using a Color Picker from a View Controller
+
+Suppose you have a view controller with a `color` property you'd like to let the user pick. 
+Make your view controller implement the `FCColorPickerViewControllerDelegate` protocol. Handle the color picked and the cancelled methods, and make a method that triggers showing the view controller.
+
+```
+-(IBAction)chooseColor:(id)sender {
+    FCColorPickerViewController *colorPicker = [FCColorPickerViewController colorPicker];
+    colorPicker.color = self.color;
+    colorPicker.delegate = self;
+    
+    [colorPicker setModalPresentationStyle:UIModalPresentationFormSheet];
+    [self presentViewController:colorPicker animated:YES completion:nil];
+}
+
+#pragma mark - FCColorPickerViewControllerDelegate Methods
+
+-(void)colorPickerViewController:(FCColorPickerViewController *)colorPicker didSelectColor:(UIColor *)color {
+    self.color = color;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)colorPickerViewControllerDidCancel:(FCColorPickerViewController *)colorPicker {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+```
+
+# Screenshots
+
+### iPhone
+
+![](/Screenshots/color-picker-iphone-5.png) 
+
+![](/Screenshots/color-picker-iphone-4.png)
+
+### iPad
+
+![](/Screenshots/color-picker-ipad.png) 
+
+![](/Screenshots/color-picker-ipad-landscape.png)
+
+# Dependencies
 
 [UIColor-Utilities](https://github.com/fcanas/uicolor-utilities)
 
 When using [CocoaPods](http://cocoapods.org), the `UIColor-Utilities` dependency is handled automatically.
 
-## Example Usage
+# Example Project
 
 [iOS Color Picker Example](https://github.com/fcanas/ios-color-picker-example)
-
-[iphone5]: http://www.fabiancanas.com/img/color-picker-iphone-5.png "iOS Color Picker on an iPhone 5"
-[ipad]: http://www.fabiancanas.com/img/color-picker-ipad.png "iOS Color Picker on an iPad"
-[iphone4]: http://www.fabiancanas.com/img/color-picker-iphone-4.png "iOS Color Picker on an iPhone 4"
-[ipad-full-screen]: http://www.fabiancanas.com/img/color-picker-ipad-landscape.png "iOS Color Picker full screen on an iPad"
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fcanas/ios-color-picker/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
