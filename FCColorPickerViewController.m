@@ -125,6 +125,7 @@
     hueSatPosition.y = (1.0-currentSaturation)*_hueSatImage.frame.size.height+_hueSatImage.frame.origin.y;
     
     _crossHairs.center = hueSatPosition;
+    [self updateGradientColor];
 }
 
 - (void)updateGradientColor {
