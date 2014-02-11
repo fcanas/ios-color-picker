@@ -9,6 +9,15 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ `FCColorPickerViewController` is a view controller that displays a color picker to the user.
+ 
+ To use it, instantiate a `FCColorPickerViewController` with one of the class constructors, set a delegate that 
+ implements the `FCColorPickerViewControllerDelegate` protocol, and present the color picker however you wish,
+ *e.g.* modally full screen, modally in a form, in a popover, etc. You are responsible for dismissing the color
+ picker when the user finishes picking a color. The delegate methods in the `FCColorPickerViewControllerDelegate`
+ protocol and the `color` property of the color picker provide a reference to the color the user picked.
+ */
 @class FCColorPickerViewController, FCBrightDarkGradView, FCColorSwatchView;
 
 /**
@@ -38,12 +47,32 @@
 
 @interface FCColorPickerViewController : UIViewController
 
+/// @name Initializing a Color Picker object
+
+/**
+ Creates and returns a color picker.
+ */
++ (instancetype)colorPicker;
+
+/**
+ Creates and returns a color picker initialized with the provided color and delegate.
+ @paran color The initial value for the color picker's `color` property. The color picker will represent this color when presented.
+ @param delegate An object implementing the `FCColorPickerViewControllerDelegate` protocol to act as the picker's delegate
+ @see -color,
+ @see -delegate
+ */
++ (instancetype)colorPickerWithColor:(UIColor *)color delegate:(id<FCColorPickerViewControllerDelegate>) delegate;
+
+/// @name The Color
+
 /**
  The color that the picker is representing.
  
  Its value changes as the user interacts with the picker, and changing the property will update the UI accordingly.
  */
 @property (readwrite, nonatomic, copy) UIColor *color;
+
+/// @name Managing the Delegate
 
 /**
  The object that acts as the delegate of the receiving color picker.
@@ -53,6 +82,8 @@
  @see FCColorPickerViewControllerDelegate protocol
  */
 @property (nonatomic,assign) id<FCColorPickerViewControllerDelegate> delegate;
+
+/// @name Controlling the Color Picker's Appearance
 
 /**
  The view controller's background color.
@@ -70,20 +101,6 @@
  @see -backgroundColor
  */
 @property (nonatomic, copy) UIColor *tintColor;
-
-/**
- Creates and returns a color picker.
- */
-+ (instancetype)colorPicker;
-
-/**
- Creates and returns a color picker initialized with the provided color and delegate.
- @paran color The initial value for the color picker's `color` property. The color picker will represent this color when presented.
- @param delegate An object implementing the `FCColorPickerViewControllerDelegate` protocol to act as the picker's delegate
- @see -color,
- @see -delegate
- */
-+ (instancetype)colorPickerWithColor:(UIColor *)color delegate:(id<FCColorPickerViewControllerDelegate>) delegate;
 
 @end
 
