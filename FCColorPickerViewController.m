@@ -21,8 +21,8 @@
 
 @property (readwrite, nonatomic, strong) IBOutlet FCBrightDarkGradView *gradientView;
 @property (readwrite, nonatomic, strong) IBOutlet UIImageView *hueSatImage;
-@property (readwrite, nonatomic, strong) IBOutlet UIImageView *crossHairs;
-@property (readwrite, nonatomic, strong) IBOutlet UIImageView *brightnessBar;
+@property (readwrite, nonatomic, strong) IBOutlet UIView *crossHairs;
+@property (readwrite, nonatomic, strong) IBOutlet UIView *brightnessBar;
 @property (readwrite, nonatomic, strong) IBOutlet FCColorSwatchView *swatch;
 
 - (IBAction) chooseSelectedColor;
@@ -48,6 +48,20 @@
     [self.view bringSubviewToFront:_crossHairs];
     [self.view bringSubviewToFront:_brightnessBar];
     viewIsLoaded = YES;
+    
+    UIColor *edgeColor = [UIColor colorWithWhite:0.9 alpha:0.8];
+    
+    self.crossHairs.layer.cornerRadius = 19;
+    self.crossHairs.layer.borderColor = edgeColor.CGColor;
+    self.crossHairs.layer.borderWidth = 2;
+    self.crossHairs.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.crossHairs.layer.shadowOffset = CGSizeZero;
+    self.crossHairs.layer.shadowRadius = 1;
+    self.crossHairs.layer.shadowOpacity = 0.5;
+    
+    self.brightnessBar.layer.cornerRadius = 9;
+    self.brightnessBar.layer.borderColor = edgeColor.CGColor;
+    self.brightnessBar.layer.borderWidth = 2;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -131,9 +145,12 @@
 - (void)updateGradientColor {
     UIColor *gradientColor = [UIColor colorWithHue: currentHue
                                         saturation: currentSaturation
-                                        brightness: 0.5
+                                        brightness: 1.0
                                              alpha:1.0];
 	
+    _brightnessBar.layer.backgroundColor = _color.CGColor;
+    _crossHairs.layer.backgroundColor = gradientColor.CGColor;
+    
 	[_gradientView setColor:gradientColor];
 }
 
@@ -164,8 +181,7 @@
     _swatch.color = _color;
 }
 
-#pragma mark -
-#pragma mark Touch Handling
+#pragma mark - Touch Handling
 
 // Handles the start of a touch
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -191,8 +207,7 @@
 	}
 }
 
-#pragma mark -
-#pragma mark IBActions
+#pragma mark - IBActions
 
 - (IBAction)chooseSelectedColor {
     [_delegate colorPickerViewController:self didSelectColor:self.color];

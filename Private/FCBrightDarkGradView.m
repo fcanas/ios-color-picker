@@ -27,10 +27,7 @@
 
 - (void)setupGradient {
 	// Create a color equivalent to the current color with brightness maximized
-	const CGFloat *c = CGColorGetComponents([[UIColor colorWithHue:[_color hue]
-                                                        saturation:[_color saturation]
-                                                        brightness:1.0
-                                                             alpha:1.0] CGColor]);
+	const CGFloat *c = CGColorGetComponents([_color CGColor]);
 	CGFloat colors[] =
 	{
 		c[0],c[1],c[2],1.0,
@@ -44,7 +41,6 @@
     }
 	gradient = CGGradientCreateWithColorComponents(rgb, colors, NULL, sizeof(colors)/(sizeof(colors[0])*4));
 	CGColorSpaceRelease(rgb);
-	
 }
 
 - (void)drawRect:(CGRect)rect {
