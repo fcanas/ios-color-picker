@@ -19,14 +19,6 @@
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setupLayers];
-    }
-    return self;
-}
-
 -(void)setupLayers {
     CALayer *layer = self.layer;
     UIColor *edgeColor = [UIColor colorWithWhite:0.9 alpha:0.8];
