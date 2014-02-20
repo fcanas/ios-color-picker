@@ -13,6 +13,9 @@
 #import "UIColor+HSV.h"
 
 @interface FCColorPickerViewController () {
+	CGFloat currentBrightness;
+	CGFloat currentHue;
+	CGFloat currentSaturation;
     BOOL viewIsLoaded;
 }
 
@@ -63,10 +66,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
-//    [self updateBrightnessPosition];
-//    [self updateCrosshairPosition];
-    
+    [self setColor:_color];
+    [self updateBrightnessPosition];
+    [self updateGradientColor];
+    [self updateCrosshairPosition];
+    _swatch.color = _color;
     self.tintColor = self.tintColor;
     self.backgroundColor = self.backgroundColor;
 }
@@ -107,6 +111,7 @@
     if (![_color isEqual:newColor]) {
         _color = [newColor copy];
         _swatch.color = _color;
+        [self updateGradientColor];
     }
 }
 
@@ -117,41 +122,29 @@
 }
 
 - (void)updateBrightnessPosition {
+    currentBrightness = _color.brightness;
     CGPoint brightnessPosition;
-    brightnessPosition.x = (1.0-_color.brightness)*_gradientView.frame.size.width + _gradientView.frame.origin.x;
+    brightnessPosition.x = (1.0-currentBrightness)*_gradientView.frame.size.width + _gradientView.frame.origin.x;
     brightnessPosition.y = _gradientView.center.y;
     _brightnessBar.center = brightnessPosition;
 }
 
 - (void)updateCrosshairPosition {
-    if (_crossHairs == nil) {
-        return;
-    }
+    currentHue = _color.hue;
+    currentSaturation = _color.saturation;
     
-    CGFloat hue;
-    CGFloat saturation;
-    if (kCGColorSpaceModelMonochrome == CGColorSpaceGetModel(CGColorGetColorSpace(_color.CGColor))) {
-        hue = 0;
-        saturation = 0;
-    } else {
-        hue = _color.hue;
-        saturation = _color.saturation;
-    }
     CGPoint hueSatPosition;
-    if (hue < 0) {
-        NSLog(@"problem");
-    }
     
-    hueSatPosition.x = (hue * _hueSatImage.frame.size.width)+_hueSatImage.frame.origin.x;
-    hueSatPosition.y = (1.0 - saturation)*_hueSatImage.frame.size.height+_hueSatImage.frame.origin.y;
+    hueSatPosition.x = (currentHue*_hueSatImage.frame.size.width)+_hueSatImage.frame.origin.x;
+    hueSatPosition.y = (1.0-currentSaturation)*_hueSatImage.frame.size.height+_hueSatImage.frame.origin.y;
     
     _crossHairs.center = hueSatPosition;
     [self updateGradientColor];
 }
 
 - (void)updateGradientColor {
-    UIColor *gradientColor = [UIColor colorWithHue: _color.hue
-                                        saturation: _color.saturation
+    UIColor *gradientColor = [UIColor colorWithHue: currentHue
+                                        saturation: currentSaturation
                                         brightness: 1.0
                                              alpha:1.0];
 	
@@ -163,25 +156,29 @@
 
 - (void)updateHueSatWithMovement:(CGPoint) position {
     
-	double currentHue = (position.x-_hueSatImage.frame.origin.x)/_hueSatImage.frame.size.width;
-	double currentSaturation = 1.0 -  (position.y-_hueSatImage.frame.origin.y)/_hueSatImage.frame.size.height;
+	currentHue = (position.x-_hueSatImage.frame.origin.x)/_hueSatImage.frame.size.width;
+	currentSaturation = 1.0 -  (position.y-_hueSatImage.frame.origin.y)/_hueSatImage.frame.size.height;
     
 	UIColor *_tcolor = [UIColor colorWithHue:currentHue
                                   saturation:currentSaturation
-                                  brightness:_color.brightness
+                                  brightness:currentBrightness
                                        alpha:1.0];
-    [self setColor:_tcolor];
+    [self _setColor:_tcolor];
+	
+    _swatch.color = _color;
 }
 
 - (void)updateBrightnessWithMovement:(CGPoint) position {
 	
-	double currentBrightness = 1.0 - ((position.x - _gradientView.frame.origin.x)/_gradientView.frame.size.width) ;
+	currentBrightness = 1.0 - ((position.x - _gradientView.frame.origin.x)/_gradientView.frame.size.width) ;
 	
-	UIColor *_tcolor = [UIColor colorWithHue:_color.hue
-                                  saturation:_color.saturation
+	UIColor *_tcolor = [UIColor colorWithHue:currentHue
+                                  saturation:currentSaturation
                                   brightness:currentBrightness
                                        alpha:1.0];
-    [self setColor:_tcolor];
+    [self _setColor:_tcolor];
+	
+    _swatch.color = _color;
 }
 
 #pragma mark - Touch Handling

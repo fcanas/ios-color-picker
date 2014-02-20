@@ -35,7 +35,7 @@
 	};
 	
 	CGColorSpaceRef rgb = CGColorSpaceCreateDeviceRGB();
-    
+	
     if (gradient!=nil) {
         CGGradientRelease(gradient);
     }
