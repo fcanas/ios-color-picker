@@ -109,14 +109,25 @@
 
 - (void)_setColor:(UIColor *)newColor {
     if (![_color isEqual:newColor]) {
-        _color = [newColor copy];
+        
+        if (CGColorSpaceGetModel(CGColorGetColorSpace(newColor.CGColor))==kCGColorSpaceModelMonochrome) {
+            _color = [UIColor colorWithHue:0
+                                saturation:0
+                                brightness:newColor.brightness
+                                     alpha:1.0];
+        } else {
+            _color = [newColor copy];
+        }
+        
         _swatch.color = _color;
-        [self updateGradientColor];
     }
 }
 
 - (void)setColor:(UIColor *)newColor {
+    currentHue = _color.hue;
+    currentSaturation = _color.saturation;
     [self _setColor:newColor];
+    [self updateGradientColor];
     [self updateBrightnessPosition];
     [self updateCrosshairPosition];
 }
@@ -130,9 +141,6 @@
 }
 
 - (void)updateCrosshairPosition {
-    currentHue = _color.hue;
-    currentSaturation = _color.saturation;
-    
     CGPoint hueSatPosition;
     
     hueSatPosition.x = (currentHue*_hueSatImage.frame.size.width)+_hueSatImage.frame.origin.x;
@@ -163,6 +171,15 @@
                                   saturation:currentSaturation
                                   brightness:currentBrightness
                                        alpha:1.0];
+    UIColor *gradientColor = [UIColor colorWithHue: currentHue
+                                        saturation: currentSaturation
+                                        brightness: 1.0
+                                             alpha:1.0];
+	
+    _brightnessBar.layer.backgroundColor = _color.CGColor;
+    _crossHairs.layer.backgroundColor = gradientColor.CGColor;
+    [self updateGradientColor];
+    
     [self _setColor:_tcolor];
 	
     _swatch.color = _color;
@@ -177,7 +194,8 @@
                                   brightness:currentBrightness
                                        alpha:1.0];
     [self _setColor:_tcolor];
-	
+    
+	_brightnessBar.layer.backgroundColor = _color.CGColor;
     _swatch.color = _color;
 }
 
