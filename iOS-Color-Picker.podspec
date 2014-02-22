@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "iOS-Color-Picker"
-  s.version      = "1.0.0"
+  s.version      = "1.1.1"
   s.summary      = "An HSL color-picker for the iPhone."
   s.description  = <<-DESC
                    A reusable, simple color picker for iOS.
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
 		LICENSE
 	}
   s.author       = { "Fabian Canas" => "fcanas@gmail.com" }
-  s.source       = { :git => "https://github.com/fcanas/ios-color-picker.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/fcanas/ios-color-picker.git", :tag => "1.1.1" }
   s.platform     = :ios, '5.0'
   s.source_files = '**/*.{h,m}'
   s.public_header_files = 'FCColorPickerViewController.h'
