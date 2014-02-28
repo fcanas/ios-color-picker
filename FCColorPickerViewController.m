@@ -183,13 +183,14 @@
                                         brightness: 1.0
                                              alpha:1.0];
 	
-    _brightnessBar.layer.backgroundColor = _color.CGColor;
+    
     _crossHairs.layer.backgroundColor = gradientColor.CGColor;
     [self updateGradientColor];
     
     [self _setColor:_tcolor];
 	
     _swatch.color = _color;
+    _brightnessBar.layer.backgroundColor = _color.CGColor;
 }
 
 - (void)updateBrightnessWithMovement:(CGPoint) position {
