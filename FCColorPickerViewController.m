@@ -111,11 +111,12 @@
         
         CGFloat brightness;
         [newColor getHue:NULL saturation:NULL brightness:&brightness alpha:NULL];
-        
-        if (CGColorSpaceGetModel(CGColorGetColorSpace(newColor.CGColor))==kCGColorSpaceModelMonochrome) {
+        CGColorSpaceModel colorSpaceModel = CGColorSpaceGetModel(CGColorGetColorSpace(newColor.CGColor));
+        if (colorSpaceModel==kCGColorSpaceModelMonochrome) {
+            const CGFloat *c = CGColorGetComponents(newColor.CGColor);
             _color = [UIColor colorWithHue:0
                                 saturation:0
-                                brightness:brightness
+                                brightness:c[0]
                                      alpha:1.0];
         } else {
             _color = [newColor copy];
