@@ -7,7 +7,6 @@
 //
 
 #import "FCBrightDarkGradView.h"
-#import "UIColor+HSV.h"
 
 @interface FCBrightDarkGradView () {
     CGGradientRef gradient;

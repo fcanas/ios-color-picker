@@ -29,5 +29,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.resources = "Resources/*.png", 'FCColorPickerViewController.xib'
   s.frameworks = 'QuartzCore', 'Foundation', 'UIKit', 'CoreGraphics'
-  s.dependency 'UIColor-Utilities', '~> 1.0.1'
+
 end

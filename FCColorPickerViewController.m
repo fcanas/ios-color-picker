@@ -10,7 +10,6 @@
 #import "FCColorPickerViewController.h"
 #import "FCBrightDarkGradView.h"
 #import "FCColorSwatchView.h"
-#import "UIColor+HSV.h"
 
 @interface FCColorPickerViewController () {
 	CGFloat currentBrightness;
@@ -110,10 +109,13 @@
 - (void)_setColor:(UIColor *)newColor {
     if (![_color isEqual:newColor]) {
         
+        CGFloat brightness;
+        [newColor getHue:NULL saturation:NULL brightness:&brightness alpha:NULL];
+        
         if (CGColorSpaceGetModel(CGColorGetColorSpace(newColor.CGColor))==kCGColorSpaceModelMonochrome) {
             _color = [UIColor colorWithHue:0
                                 saturation:0
-                                brightness:newColor.brightness
+                                brightness:brightness
                                      alpha:1.0];
         } else {
             _color = [newColor copy];
@@ -124,8 +126,12 @@
 }
 
 - (void)setColor:(UIColor *)newColor {
-    currentHue = _color.hue;
-    currentSaturation = _color.saturation;
+    
+    CGFloat hue, saturation;
+    [newColor getHue:&hue saturation:&saturation brightness:NULL alpha:NULL];
+
+    currentHue = hue;
+    currentSaturation = saturation;
     [self _setColor:newColor];
     [self updateGradientColor];
     [self updateBrightnessPosition];
@@ -133,7 +139,8 @@
 }
 
 - (void)updateBrightnessPosition {
-    currentBrightness = _color.brightness;
+    [_color getHue:NULL saturation:NULL brightness:&currentBrightness alpha:NULL];
+    
     CGPoint brightnessPosition;
     brightnessPosition.x = (1.0-currentBrightness)*_gradientView.frame.size.width + _gradientView.frame.origin.x;
     brightnessPosition.y = _gradientView.center.y;
