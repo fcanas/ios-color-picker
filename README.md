@@ -53,12 +53,6 @@ Make your view controller implement the `FCColorPickerViewControllerDelegate` pr
 
 ![](/Screenshots/color-picker-ipad-landscape.png)
 
-# Dependencies
-
-[UIColor-Utilities](https://github.com/fcanas/uicolor-utilities)
-
-When using [CocoaPods](http://cocoapods.org), the `UIColor-Utilities` dependency is handled automatically.
-
 # Example Project
 
 [iOS Color Picker Example](https://github.com/fcanas/ios-color-picker-example)
