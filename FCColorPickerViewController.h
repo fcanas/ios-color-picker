@@ -81,7 +81,7 @@
  
  @see FCColorPickerViewControllerDelegate protocol
  */
-@property (nonatomic,assign) id<FCColorPickerViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<FCColorPickerViewControllerDelegate> delegate;
 
 /// @name Controlling the Color Picker's Appearance
 
