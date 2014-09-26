@@ -1,5 +1,9 @@
 # iOS Color Picker
 
+[![Version](https://img.shields.io/cocoapods/v/iOS-Color-Picker.svg?style=flat)](http://cocoadocs.org/docsets/iOS-Color-Picker)
+[![License](https://img.shields.io/cocoapods/l/iOS-Color-Picker.svg?style=flat)](http://cocoadocs.org/docsets/iOS-Color-Picker)
+[![Platform](https://img.shields.io/cocoapods/p/iOS-Color-Picker.svg?style=flat)](http://cocoadocs.org/docsets/iOS-Color-Picker)
+
 A reusable color picker component for iOS. Works for iPhone, iPad, in modal sheets, popovers... just about anywhere.
 
 # Using iOS-Color-Picker
@@ -8,7 +12,7 @@ A reusable color picker component for iOS. Works for iPhone, iPad, in modal shee
 
 The easiest way to use iOS-Color-Picker is with [CocoaPods](http://cocoapods.org). Add the following line to your `Podfile`.
 
-```
+```ruby
 pod 'iOS-Color-Picker'
 ```
 
@@ -17,7 +21,7 @@ pod 'iOS-Color-Picker'
 Suppose you have a view controller with a `color` property you'd like to let the user pick. 
 Make your view controller implement the `FCColorPickerViewControllerDelegate` protocol. Handle the color picked and the cancelled methods, and make a method that triggers showing the view controller.
 
-```
+```objc
 -(IBAction)chooseColor:(id)sender {
     FCColorPickerViewController *colorPicker = [FCColorPickerViewController colorPicker];
     colorPicker.color = self.color;
@@ -42,20 +46,20 @@ Make your view controller implement the `FCColorPickerViewControllerDelegate` pr
 # Screenshots
 
 ### iPhone
+<img src="https://raw.github.com/fcanas/ios-color-picker/master/Screenshots/color-picker-iphone-5.png" alt="iPhone 5" width="414" />
+<!--![](/Screenshots/color-picker-iphone-5.png) -->
 
-![](/Screenshots/color-picker-iphone-5.png) 
-
-![](/Screenshots/color-picker-iphone-4.png)
+<img src="https://raw.github.com/fcanas/ios-color-picker/master/Screenshots/color-picker-iphone-4.png" alt="iPhone 5" width="396" />
+<!--![](/Screenshots/color-picker-iphone-4.png)-->
 
 ### iPad
+<img src="https://raw.github.com/fcanas/ios-color-picker/master/Screenshots/color-picker-ipad.png" alt="iPhone 5" width="1136" />
+<!--![](/Screenshots/color-picker-ipad.png) -->
 
-![](/Screenshots/color-picker-ipad.png) 
-
-![](/Screenshots/color-picker-ipad-landscape.png)
+<img src="https://raw.github.com/fcanas/ios-color-picker/master/Screenshots/color-picker-ipad-landscape.png" alt="iPhone 5" width="1136" />
+<!--![](/Screenshots/color-picker-ipad-landscape.png)-->
 
 # Example Project
 
 [iOS Color Picker Example](https://github.com/fcanas/ios-color-picker-example)
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fcanas/ios-color-picker/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
