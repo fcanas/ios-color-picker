@@ -61,5 +61,5 @@ Make your view controller implement the `FCColorPickerViewControllerDelegate` pr
 
 # Example Project
 
-[iOS Color Picker Example](https://github.com/fcanas/ios-color-picker-example)
+An example project is included in `/Example`. Run `pod install` int he example directory to configure the project.
 
