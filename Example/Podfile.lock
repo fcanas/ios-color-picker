@@ -1,0 +1,19 @@
+PODS:
+  - iOS-Color-Picker (1.1.2)
+
+DEPENDENCIES:
+  - iOS-Color-Picker (from `../`)
+
+EXTERNAL SOURCES:
+  iOS-Color-Picker:
+    :git: ../
+
+CHECKOUT OPTIONS:
+  iOS-Color-Picker:
+    :commit: 04dbdcdbd2cfb91182c0a39b62fafe5f8a6cd4d5
+    :git: ../
+
+SPEC CHECKSUMS:
+  iOS-Color-Picker: f99be581c5bc377067dce9cc4e5518402a60c21e
+
+COCOAPODS: 0.35.0
