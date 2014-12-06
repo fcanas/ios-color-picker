@@ -43,6 +43,8 @@ Make your view controller implement the `FCColorPickerViewControllerDelegate` pr
 }
 ```
 
+The color picker has `tintColor` and `backgroundColor` properties for configuring its appearance.
+
 # Screenshots
 
 ### iPhone
