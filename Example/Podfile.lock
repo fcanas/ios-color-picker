@@ -6,7 +6,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   iOS-Color-Picker:
-    :git: ../
+    :path: ../
 
 CHECKOUT OPTIONS:
   iOS-Color-Picker:

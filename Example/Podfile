@@ -1,2 +1,2 @@
 source 'https://github.com/CocoaPods/Specs.git'
-pod 'iOS-Color-Picker', git: '../'
+pod 'iOS-Color-Picker', path: '../'
