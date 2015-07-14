@@ -63,5 +63,5 @@ The color picker has `tintColor` and `backgroundColor` properties for configurin
 
 # Example Project
 
-An example project is included in `/Example`. Run `pod install` int he example directory to configure the project.
+An example project is included in `/Example`. Run `pod install` in the example directory to configure the project, then open the Xcode workspace.
 
