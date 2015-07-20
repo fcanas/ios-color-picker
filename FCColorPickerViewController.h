@@ -9,6 +9,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  `FCColorPickerViewController` is a view controller that displays a color picker to the user.
  
@@ -52,7 +54,7 @@
 /**
  Creates and returns a color picker.
  */
-+ (instancetype)colorPicker;
++ (nonnull instancetype)colorPicker;
 
 /**
  Creates and returns a color picker initialized with the provided color and delegate.
@@ -61,7 +63,7 @@
  @see -color,
  @see -delegate
  */
-+ (instancetype)colorPickerWithColor:(UIColor *)color delegate:(id<FCColorPickerViewControllerDelegate>) delegate;
++ (instancetype)colorPickerWithColor:(nullable UIColor *)color delegate:(nullable id<FCColorPickerViewControllerDelegate>) delegate;
 
 /// @name The Color
 
@@ -70,7 +72,7 @@
  
  Its value changes as the user interacts with the picker, and changing the property will update the UI accordingly.
  */
-@property (readwrite, nonatomic, copy) UIColor *color;
+@property (readwrite, nonatomic, copy, nullable) UIColor *color;
 
 /// @name Managing the Delegate
 
@@ -81,7 +83,7 @@
  
  @see FCColorPickerViewControllerDelegate protocol
  */
-@property (nonatomic, weak) id<FCColorPickerViewControllerDelegate> delegate;
+@property (nonatomic, weak, nullable) id<FCColorPickerViewControllerDelegate> delegate;
 
 /// @name Controlling the Color Picker's Appearance
 
@@ -91,7 +93,7 @@
  The default value is nil, which results in a dark gray color on iPhones, and a clear color on iPads.
  @see -tintColor
  */
-@property (nonatomic, copy) UIColor *backgroundColor;
+@property (nonatomic, copy, nullable) UIColor *backgroundColor;
 
 /**
  The view controller's tint color.
@@ -100,7 +102,8 @@
  `tintColor` is initially nil, and not setting it leaves the color picker to inherit its tint color in the normal way for iOS 7.
  @see -backgroundColor
  */
-@property (nonatomic, copy) UIColor *tintColor;
+@property (nonatomic, copy, nullable) UIColor *tintColor;
 
 @end
 
+NS_ASSUME_NONNULL_END
