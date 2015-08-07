@@ -102,7 +102,7 @@ NS_ASSUME_NONNULL_BEGIN
  `tintColor` is initially nil, and not setting it leaves the color picker to inherit its tint color in the normal way for iOS 7.
  @see -backgroundColor
  */
-@property (nonatomic, copy, nullable) UIColor *tintColor;
+@property (nonatomic, copy, null_resettable) UIColor *tintColor;
 
 @end
 

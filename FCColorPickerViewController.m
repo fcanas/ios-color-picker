@@ -16,6 +16,7 @@
 	CGFloat currentHue;
 	CGFloat currentSaturation;
     BOOL viewIsLoaded;
+    UIColor *_tintColor;
 }
 
 @property (readwrite, nonatomic, strong) IBOutlet FCBrightDarkGradView *gradientView;
@@ -88,8 +89,16 @@
         return;
     }
     if ([self.view respondsToSelector:@selector(setTintColor:)]) {
-        [self.view setTintColor:_tintColor];
+        [self.view setTintColor:self.tintColor];
     }
+}
+
+- (UIColor *)tintColor
+{
+    if (_tintColor) {
+        return _tintColor;
+    }
+    return self.view.tintColor;
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor
