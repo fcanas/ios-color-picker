@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "iOS-Color-Picker"
-  s.version      = "1.1.3"
+  s.version      = "1.1.4"
   s.summary      = "An HSL color-picker for the iPhone."
   s.description  = <<-DESC
                    A reusable, simple color picker for iOS.
@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.license      = {
 		:type => 'MIT',
 		:text => <<-LICENSE
-		Copyright (C) 2012 Fabian Canas
-		
+		Copyright (C) 2015 Fabian Canas
+
 		Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 		The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
 		LICENSE
 	}
   s.author       = { "Fabian Canas" => "fcanas@gmail.com" }
-  s.source       = { :git => "https://github.com/fcanas/ios-color-picker.git", :tag => "v1.1.3" }
+  s.source       = { :git => "https://github.com/fcanas/ios-color-picker.git", :tag => "v1.1.4" }
   s.platform     = :ios, '5.0'
   s.exclude_files = 'Example'
   s.source_files = '**/*.{h,m}'
