@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  `FCColorPickerViewController` is a view controller that displays a color picker to the user.
- 
- To use it, instantiate a `FCColorPickerViewController` with one of the class constructors, set a delegate that 
+
+ To use it, instantiate a `FCColorPickerViewController` with one of the class constructors, set a delegate that
  implements the `FCColorPickerViewControllerDelegate` protocol, and present the color picker however you wish,
  *e.g.* modally full screen, modally in a form, in a popover, etc. You are responsible for dismissing the color
  picker when the user finishes picking a color. The delegate methods in the `FCColorPickerViewControllerDelegate`
@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  The delegate of an `FCColorPickerViewController` must adopt the `FCColorPickerViewControllerDelegate` protocol.
- 
+
  The primary responsibility of the delegate is hiding or dismissing the picker controller when the picker has finished.
  The delegate is the object that is told which color the picker picked.
  */
@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Called on the delegate of `colorPicker` when the user has finished selecting a color.
- 
+
  @param colorPicker The `FCColorPickerViewController` that has finished picking a color.
  @param color The color that was picked by the user.
  */
@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Called on the delegate of `colorPicker` when the user has canceled selecting a color.
- 
+
  @param colorPicker The `FCColorPickerViewController` that has canceled picking a color.
  */
 - (void)colorPickerViewControllerDidCancel:(FCColorPickerViewController *)colorPicker;
@@ -69,7 +69,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  The color that the picker is representing.
- 
+
  Its value changes as the user interacts with the picker, and changing the property will update the UI accordingly.
  */
 @property (readwrite, nonatomic, copy, nullable) UIColor *color;
@@ -78,9 +78,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  The object that acts as the delegate of the receiving color picker.
- 
+
  The delegate must adopt the `FCColorPickerViewControllerDelegate` protocol. The delegate is not retained.
- 
+
  @see FCColorPickerViewControllerDelegate protocol
  */
 @property (nonatomic, weak, nullable) id<FCColorPickerViewControllerDelegate> delegate;
@@ -89,7 +89,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  The view controller's background color.
- 
+
  The default value is nil, which results in a dark gray color on iPhones, and a clear color on iPads.
  @see -tintColor
  */
@@ -97,9 +97,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  The view controller's tint color.
- 
+
  Updates to the `tintColor` property are forwarded to the color picker's view. The tint color affects the coloring of the "Choose" and "Cancel" buttons in iOS 7. Below iOS 7, this property has no effect.
- `tintColor` is initially nil, and not setting it leaves the color picker to inherit its tint color in the normal way for iOS 7.
+ `tintColor` is initially derived from the view hierarchy in the normal way for views iOS 7+. Setting this property to `nil` restores this behavior.
  @see -backgroundColor
  */
 @property (nonatomic, copy, null_resettable) UIColor *tintColor;
