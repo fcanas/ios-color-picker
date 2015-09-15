@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import iOS_Color_Picker
 
 class ViewController: UIViewController, FCColorPickerViewControllerDelegate {
 

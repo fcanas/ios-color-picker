@@ -5,6 +5,5 @@ target :ColorPicker do
 end
 
 target :SwiftyPicker do
-    use_frameworks!
     pod 'iOS-Color-Picker', path: '../'
 end
