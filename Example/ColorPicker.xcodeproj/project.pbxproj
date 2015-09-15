@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A704287A8D7B75DC19C15C5 /* Pods_SwiftyPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A584BEE853F446BE48963C36 /* Pods_SwiftyPicker.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1CD64125D046349F11782C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29BD2759C808F23A94C43403 /* libPods.a */; };
+		63F469501E26FF9C2820E452 /* libPods-ColorPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C554D252DBEAEDBD0379BF0E /* libPods-ColorPicker.a */; };
+		E774D5DF1BA7CF08009DEA14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774D5DE1BA7CF08009DEA14 /* AppDelegate.swift */; };
+		E774D5E11BA7CF08009DEA14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774D5E01BA7CF08009DEA14 /* ViewController.swift */; };
+		E774D5E41BA7CF08009DEA14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E774D5E21BA7CF08009DEA14 /* Main.storyboard */; };
+		E774D5E61BA7CF08009DEA14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E774D5E51BA7CF08009DEA14 /* Assets.xcassets */; };
+		E774D5E91BA7CF08009DEA14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E774D5E71BA7CF08009DEA14 /* LaunchScreen.storyboard */; };
+		E774D5F41BA7CF08009DEA14 /* SwiftyPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774D5F31BA7CF08009DEA14 /* SwiftyPickerTests.swift */; };
+		E774D5FF1BA7CF08009DEA14 /* SwiftyPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774D5FE1BA7CF08009DEA14 /* SwiftyPickerUITests.swift */; };
 		E7D4BB211A33995200C98327 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4BB201A33995200C98327 /* main.m */; };
 		E7D4BB241A33995200C98327 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4BB231A33995200C98327 /* AppDelegate.m */; };
 		E7D4BB271A33995200C98327 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D4BB261A33995200C98327 /* ViewController.m */; };
@@ -18,6 +27,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E774D5F01BA7CF08009DEA14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7D4BB131A33995200C98327 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E774D5DB1BA7CF08009DEA14;
+			remoteInfo = SwiftyPicker;
+		};
+		E774D5FB1BA7CF08009DEA14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7D4BB131A33995200C98327 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E774D5DB1BA7CF08009DEA14;
+			remoteInfo = SwiftyPicker;
+		};
 		E7D4BB351A33995200C98327 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E7D4BB131A33995200C98327 /* Project object */;
@@ -30,7 +53,24 @@
 /* Begin PBXFileReference section */
 		1390C9F849F23404D64F6A60 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		29BD2759C808F23A94C43403 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		62ED71169BAC8639B97110F8 /* Pods-SwiftyPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyPicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyPicker/Pods-SwiftyPicker.debug.xcconfig"; sourceTree = "<group>"; };
+		A584BEE853F446BE48963C36 /* Pods_SwiftyPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF992D634F7C1D77AA312E74 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B6B9D5B649C16E40F34F99A7 /* Pods-SwiftyPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyPicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyPicker/Pods-SwiftyPicker.release.xcconfig"; sourceTree = "<group>"; };
+		C554D252DBEAEDBD0379BF0E /* libPods-ColorPicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ColorPicker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E774D5DC1BA7CF08009DEA14 /* SwiftyPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E774D5DE1BA7CF08009DEA14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E774D5E01BA7CF08009DEA14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E774D5E31BA7CF08009DEA14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E774D5E51BA7CF08009DEA14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E774D5E81BA7CF08009DEA14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E774D5EA1BA7CF08009DEA14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E774D5EF1BA7CF08009DEA14 /* SwiftyPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E774D5F31BA7CF08009DEA14 /* SwiftyPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyPickerTests.swift; sourceTree = "<group>"; };
+		E774D5F51BA7CF08009DEA14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E774D5FA1BA7CF08009DEA14 /* SwiftyPickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyPickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E774D5FE1BA7CF08009DEA14 /* SwiftyPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyPickerUITests.swift; sourceTree = "<group>"; };
+		E774D6001BA7CF08009DEA14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7D4BB1B1A33995200C98327 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7D4BB1F1A33995200C98327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7D4BB201A33995200C98327 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,11 +87,34 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E774D5D91BA7CF08009DEA14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A704287A8D7B75DC19C15C5 /* Pods_SwiftyPicker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E774D5EC1BA7CF08009DEA14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E774D5F71BA7CF08009DEA14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7D4BB181A33995200C98327 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1CD64125D046349F11782C34 /* libPods.a in Frameworks */,
+				63F469501E26FF9C2820E452 /* libPods-ColorPicker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,8 +133,41 @@
 			children = (
 				AF992D634F7C1D77AA312E74 /* Pods.debug.xcconfig */,
 				1390C9F849F23404D64F6A60 /* Pods.release.xcconfig */,
+				62ED71169BAC8639B97110F8 /* Pods-SwiftyPicker.debug.xcconfig */,
+				B6B9D5B649C16E40F34F99A7 /* Pods-SwiftyPicker.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E774D5DD1BA7CF08009DEA14 /* SwiftyPicker */ = {
+			isa = PBXGroup;
+			children = (
+				E774D5DE1BA7CF08009DEA14 /* AppDelegate.swift */,
+				E774D5E01BA7CF08009DEA14 /* ViewController.swift */,
+				E774D5E21BA7CF08009DEA14 /* Main.storyboard */,
+				E774D5E51BA7CF08009DEA14 /* Assets.xcassets */,
+				E774D5E71BA7CF08009DEA14 /* LaunchScreen.storyboard */,
+				E774D5EA1BA7CF08009DEA14 /* Info.plist */,
+			);
+			path = SwiftyPicker;
+			sourceTree = "<group>";
+		};
+		E774D5F21BA7CF08009DEA14 /* SwiftyPickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				E774D5F31BA7CF08009DEA14 /* SwiftyPickerTests.swift */,
+				E774D5F51BA7CF08009DEA14 /* Info.plist */,
+			);
+			path = SwiftyPickerTests;
+			sourceTree = "<group>";
+		};
+		E774D5FD1BA7CF08009DEA14 /* SwiftyPickerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E774D5FE1BA7CF08009DEA14 /* SwiftyPickerUITests.swift */,
+				E774D6001BA7CF08009DEA14 /* Info.plist */,
+			);
+			path = SwiftyPickerUITests;
 			sourceTree = "<group>";
 		};
 		E7D4BB121A33995200C98327 = {
@@ -79,6 +175,9 @@
 			children = (
 				E7D4BB1D1A33995200C98327 /* ColorPicker */,
 				E7D4BB371A33995200C98327 /* ColorPickerTests */,
+				E774D5DD1BA7CF08009DEA14 /* SwiftyPicker */,
+				E774D5F21BA7CF08009DEA14 /* SwiftyPickerTests */,
+				E774D5FD1BA7CF08009DEA14 /* SwiftyPickerUITests */,
 				E7D4BB1C1A33995200C98327 /* Products */,
 				0EECAC389086FA6CB867798F /* Pods */,
 				EB0EA43EAC684E90F709D7AB /* Frameworks */,
@@ -90,6 +189,9 @@
 			children = (
 				E7D4BB1B1A33995200C98327 /* ColorPicker.app */,
 				E7D4BB341A33995200C98327 /* ColorPickerTests.xctest */,
+				E774D5DC1BA7CF08009DEA14 /* SwiftyPicker.app */,
+				E774D5EF1BA7CF08009DEA14 /* SwiftyPickerTests.xctest */,
+				E774D5FA1BA7CF08009DEA14 /* SwiftyPickerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				29BD2759C808F23A94C43403 /* libPods.a */,
+				C554D252DBEAEDBD0379BF0E /* libPods-ColorPicker.a */,
+				A584BEE853F446BE48963C36 /* Pods_SwiftyPicker.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,6 +250,62 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E774D5DB1BA7CF08009DEA14 /* SwiftyPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E774D6071BA7CF08009DEA14 /* Build configuration list for PBXNativeTarget "SwiftyPicker" */;
+			buildPhases = (
+				583BBC59D7C4A62578161854 /* Check Pods Manifest.lock */,
+				E774D5D81BA7CF08009DEA14 /* Sources */,
+				E774D5D91BA7CF08009DEA14 /* Frameworks */,
+				E774D5DA1BA7CF08009DEA14 /* Resources */,
+				2465B301B17FCEC42E7D42B6 /* Copy Pods Resources */,
+				9AA6EB0F484FA0BE47BBCF83 /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyPicker;
+			productName = SwiftyPicker;
+			productReference = E774D5DC1BA7CF08009DEA14 /* SwiftyPicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E774D5EE1BA7CF08009DEA14 /* SwiftyPickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E774D6081BA7CF08009DEA14 /* Build configuration list for PBXNativeTarget "SwiftyPickerTests" */;
+			buildPhases = (
+				E774D5EB1BA7CF08009DEA14 /* Sources */,
+				E774D5EC1BA7CF08009DEA14 /* Frameworks */,
+				E774D5ED1BA7CF08009DEA14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E774D5F11BA7CF08009DEA14 /* PBXTargetDependency */,
+			);
+			name = SwiftyPickerTests;
+			productName = SwiftyPickerTests;
+			productReference = E774D5EF1BA7CF08009DEA14 /* SwiftyPickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E774D5F91BA7CF08009DEA14 /* SwiftyPickerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E774D6091BA7CF08009DEA14 /* Build configuration list for PBXNativeTarget "SwiftyPickerUITests" */;
+			buildPhases = (
+				E774D5F61BA7CF08009DEA14 /* Sources */,
+				E774D5F71BA7CF08009DEA14 /* Frameworks */,
+				E774D5F81BA7CF08009DEA14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E774D5FC1BA7CF08009DEA14 /* PBXTargetDependency */,
+			);
+			name = SwiftyPickerUITests;
+			productName = SwiftyPickerUITests;
+			productReference = E774D5FA1BA7CF08009DEA14 /* SwiftyPickerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		E7D4BB1A1A33995200C98327 /* ColorPicker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7D4BB3E1A33995200C98327 /* Build configuration list for PBXNativeTarget "ColorPicker" */;
@@ -192,6 +352,17 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Fabián Cañas";
 				TargetAttributes = {
+					E774D5DB1BA7CF08009DEA14 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					E774D5EE1BA7CF08009DEA14 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = E774D5DB1BA7CF08009DEA14;
+					};
+					E774D5F91BA7CF08009DEA14 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = E774D5DB1BA7CF08009DEA14;
+					};
 					E7D4BB1A1A33995200C98327 = {
 						CreatedOnToolsVersion = 6.1;
 					};
@@ -216,11 +387,38 @@
 			targets = (
 				E7D4BB1A1A33995200C98327 /* ColorPicker */,
 				E7D4BB331A33995200C98327 /* ColorPickerTests */,
+				E774D5DB1BA7CF08009DEA14 /* SwiftyPicker */,
+				E774D5EE1BA7CF08009DEA14 /* SwiftyPickerTests */,
+				E774D5F91BA7CF08009DEA14 /* SwiftyPickerUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E774D5DA1BA7CF08009DEA14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E774D5E91BA7CF08009DEA14 /* LaunchScreen.storyboard in Resources */,
+				E774D5E61BA7CF08009DEA14 /* Assets.xcassets in Resources */,
+				E774D5E41BA7CF08009DEA14 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E774D5ED1BA7CF08009DEA14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E774D5F81BA7CF08009DEA14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7D4BB191A33995200C98327 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -241,6 +439,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2465B301B17FCEC42E7D42B6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyPicker/Pods-SwiftyPicker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5770AF2DC0482CBB44A3F674 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,7 +466,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ColorPicker/Pods-ColorPicker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		583BBC59D7C4A62578161854 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5BCE863F1CB5F171275ABE27 /* Check Pods Manifest.lock */ = {
@@ -271,9 +499,49 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		9AA6EB0F484FA0BE47BBCF83 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyPicker/Pods-SwiftyPicker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E774D5D81BA7CF08009DEA14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E774D5E11BA7CF08009DEA14 /* ViewController.swift in Sources */,
+				E774D5DF1BA7CF08009DEA14 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E774D5EB1BA7CF08009DEA14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E774D5F41BA7CF08009DEA14 /* SwiftyPickerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E774D5F61BA7CF08009DEA14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E774D5FF1BA7CF08009DEA14 /* SwiftyPickerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7D4BB171A33995200C98327 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,6 +563,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E774D5F11BA7CF08009DEA14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E774D5DB1BA7CF08009DEA14 /* SwiftyPicker */;
+			targetProxy = E774D5F01BA7CF08009DEA14 /* PBXContainerItemProxy */;
+		};
+		E774D5FC1BA7CF08009DEA14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E774D5DB1BA7CF08009DEA14 /* SwiftyPicker */;
+			targetProxy = E774D5FB1BA7CF08009DEA14 /* PBXContainerItemProxy */;
+		};
 		E7D4BB361A33995200C98327 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E7D4BB1A1A33995200C98327 /* ColorPicker */;
@@ -303,6 +581,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E774D5E21BA7CF08009DEA14 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E774D5E31BA7CF08009DEA14 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E774D5E71BA7CF08009DEA14 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E774D5E81BA7CF08009DEA14 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		E7D4BB281A33995200C98327 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -322,6 +616,105 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E774D6011BA7CF08009DEA14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62ED71169BAC8639B97110F8 /* Pods-SwiftyPicker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = SwiftyPicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabiancanas.SwiftyPicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E774D6021BA7CF08009DEA14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6B9D5B649C16E40F34F99A7 /* Pods-SwiftyPicker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = SwiftyPicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabiancanas.SwiftyPicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E774D6031BA7CF08009DEA14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = SwiftyPickerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabiancanas.SwiftyPickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyPicker.app/SwiftyPicker";
+			};
+			name = Debug;
+		};
+		E774D6041BA7CF08009DEA14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = SwiftyPickerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabiancanas.SwiftyPickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyPicker.app/SwiftyPicker";
+			};
+			name = Release;
+		};
+		E774D6051BA7CF08009DEA14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = SwiftyPickerUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabiancanas.SwiftyPickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SwiftyPicker;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E774D6061BA7CF08009DEA14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = SwiftyPickerUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabiancanas.SwiftyPickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SwiftyPicker;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 		E7D4BB3C1A33995200C98327 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -459,6 +852,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E774D6071BA7CF08009DEA14 /* Build configuration list for PBXNativeTarget "SwiftyPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E774D6011BA7CF08009DEA14 /* Debug */,
+				E774D6021BA7CF08009DEA14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E774D6081BA7CF08009DEA14 /* Build configuration list for PBXNativeTarget "SwiftyPickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E774D6031BA7CF08009DEA14 /* Debug */,
+				E774D6041BA7CF08009DEA14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E774D6091BA7CF08009DEA14 /* Build configuration list for PBXNativeTarget "SwiftyPickerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E774D6051BA7CF08009DEA14 /* Debug */,
+				E774D6061BA7CF08009DEA14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E7D4BB161A33995200C98327 /* Build configuration list for PBXProject "ColorPicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
