@@ -1,2 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
-pod 'iOS-Color-Picker', path: '../'
+
+target :ColorPicker do
+    pod 'iOS-Color-Picker', path: '../'
+end
+
+target :SwiftyPicker do
+    use_frameworks!
+    pod 'iOS-Color-Picker', path: '../'
+end
