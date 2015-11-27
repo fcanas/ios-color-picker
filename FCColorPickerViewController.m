@@ -32,8 +32,10 @@
 
 @implementation FCColorPickerViewController
 
+static NSString * const NibName = @"FCColorPickerViewController";
+
 + (instancetype)colorPicker {
-    return [[self alloc] initWithNibName:@"FCColorPickerViewController" bundle:[NSBundle bundleForClass:[self class]]];
+    return [[self alloc] initWithNibName:NibName bundle:[NSBundle bundleForClass:[self class]]];
 }
 
 + (instancetype)colorPickerWithColor:(UIColor *)color delegate:(id<FCColorPickerViewControllerDelegate>) delegate {
@@ -41,6 +43,11 @@
     picker.color = color;
     picker.delegate = delegate;
     return picker;
+}
+
+- (instancetype)init
+{
+    return [self initWithNibName:NibName bundle:[NSBundle bundleForClass:[self class]]];
 }
 
 - (void)viewDidLoad {
