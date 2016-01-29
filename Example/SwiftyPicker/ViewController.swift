@@ -7,12 +7,15 @@
 //
 
 import UIKit
-import Pods_SwiftyPicker
 import iOS_Color_Picker
 
 class ViewController: UIViewController, FCColorPickerViewControllerDelegate {
 
-    var color = UIColor.blueColor()
+    var color = UIColor.blueColor() {
+        didSet {
+            self.view?.backgroundColor = color
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +28,7 @@ class ViewController: UIViewController, FCColorPickerViewControllerDelegate {
     }
 
     @IBAction func pickColor(sender :AnyObject) {
-        let colorPicker = FCColorPickerViewController.colorPicker()
+        let colorPicker = FCColorPickerViewController()
         colorPicker.color = color
         colorPicker.delegate = self
         presentViewController(colorPicker, animated: true, completion: nil)
