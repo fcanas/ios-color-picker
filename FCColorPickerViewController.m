@@ -43,6 +43,10 @@
     return picker;
 }
 
+- (instancetype)init {
+    return [self initWithNibName:@"FCColorPickerViewController" bundle:[NSBundle bundleForClass:[self class]]];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view bringSubviewToFront:_crossHairs];
