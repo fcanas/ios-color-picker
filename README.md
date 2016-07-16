@@ -16,6 +16,13 @@ The easiest way to use iOS-Color-Picker is with [CocoaPods](http://cocoapods.org
 pod 'iOS-Color-Picker'
 ```
 
+Otherwise, you need to include the following files in your project:
+
+* `FCColorPickerViewController.h`
+* `FCColorPickerViewController.m`
+* `FCColorPickerViewController.xib`
+* `Resources/colormap.png`
+
 ## Using a Color Picker from a View Controller
 
 Suppose you have a view controller with a `color` property you'd like to let the user pick. 
