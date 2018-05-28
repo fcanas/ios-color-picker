@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,64 +25,91 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="483"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="45" customClass="FCColorSwatchView">
-                    <rect key="frame" x="203" y="20" width="106" height="86"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.22282608700000001" green="0.22282608700000001" blue="0.22282608700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="41">
-                    <rect key="frame" x="19" y="20" width="168" height="37"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                    <state key="normal" title="Choose">
-                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="chooseSelectedColor" destination="-1" eventType="touchUpInside" id="62"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="59">
-                    <rect key="frame" x="19" y="70" width="168" height="37"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                    <state key="normal" title="Cancel">
-                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="cancelColorSelection" destination="-1" eventType="touchUpInside" id="61"/>
-                    </connections>
-                </button>
-                <view contentMode="scaleToFill" id="73" customClass="FCBrightDarkGradView">
-                    <rect key="frame" x="11" y="425" width="298" height="40"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-                <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" image="colormap.png" id="75">
-                    <rect key="frame" x="11" y="120" width="298" height="295"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                </imageView>
-                <view contentMode="scaleToFill" id="QMV-xL-nCV">
-                    <rect key="frame" x="166" y="157" width="38" height="38"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jWO-Lr-DfO">
+                    <rect key="frame" x="149" y="421" width="18" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
-                <view contentMode="scaleToFill" id="jWO-Lr-DfO">
-                    <rect key="frame" x="149" y="421" width="18" height="48"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Imo-b5-qFX">
+                    <rect key="frame" x="20" y="35" width="280" height="428"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IKr-00-RZB">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="70"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oC3-uC-r2P">
+                                    <rect key="frame" x="0.0" y="0.0" width="135" height="70"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41">
+                                            <rect key="frame" x="0.0" y="0.0" width="135" height="30"/>
+                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                            <state key="normal" title="Choose">
+                                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="chooseSelectedColor" destination="-1" eventType="touchUpInside" id="62"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59">
+                                            <rect key="frame" x="0.0" y="40" width="135" height="30"/>
+                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cancelColorSelection" destination="-1" eventType="touchUpInside" id="61"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="41" firstAttribute="width" secondItem="59" secondAttribute="width" id="fBf-fd-P6f"/>
+                                        <constraint firstItem="41" firstAttribute="height" secondItem="59" secondAttribute="height" id="uS0-i9-vb3"/>
+                                    </constraints>
+                                </stackView>
+                                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45" customClass="FCColorSwatchView">
+                                    <rect key="frame" x="145" y="0.0" width="135" height="70"/>
+                                    <color key="backgroundColor" red="0.22282608700000001" green="0.22282608700000001" blue="0.22282608700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="45" firstAttribute="height" secondItem="oC3-uC-r2P" secondAttribute="height" id="6tA-XQ-QEd"/>
+                                <constraint firstItem="45" firstAttribute="width" secondItem="59" secondAttribute="width" id="tCo-nI-RDj"/>
+                            </constraints>
+                        </stackView>
+                        <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" image="colormap.png" translatesAutoresizingMaskIntoConstraints="NO" id="75">
+                            <rect key="frame" x="0.0" y="80" width="280" height="294"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73" customClass="FCBrightDarkGradView">
+                            <rect key="frame" x="0.0" y="384" width="280" height="44"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="nq6-Us-Uvh"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="IKr-00-RZB" firstAttribute="width" secondItem="75" secondAttribute="width" id="X6x-om-Ufe"/>
+                        <constraint firstItem="73" firstAttribute="width" secondItem="75" secondAttribute="width" id="oF9-wP-iaE"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-xL-nCV">
+                    <rect key="frame" x="166" y="157" width="38" height="38"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.22282608700000001" green="0.22282608700000001" blue="0.22282608700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BMb-Rh-6dc" firstAttribute="bottom" secondItem="Imo-b5-qFX" secondAttribute="bottom" constant="20" id="OKS-R3-QYb"/>
+                <constraint firstItem="BMb-Rh-6dc" firstAttribute="trailing" secondItem="Imo-b5-qFX" secondAttribute="trailing" constant="20" id="baw-cu-kAy"/>
+                <constraint firstItem="Imo-b5-qFX" firstAttribute="top" secondItem="BMb-Rh-6dc" secondAttribute="top" constant="15" id="kUs-S9-a3D"/>
+                <constraint firstItem="Imo-b5-qFX" firstAttribute="leading" secondItem="BMb-Rh-6dc" secondAttribute="leading" constant="20" id="zuE-7Z-3pR"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="BMb-Rh-6dc"/>
         </view>
     </objects>
     <resources>
         <image name="colormap.png" width="1004" height="1004"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>
