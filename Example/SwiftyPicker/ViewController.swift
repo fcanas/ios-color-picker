@@ -11,7 +11,7 @@ import iOS_Color_Picker
 
 class ViewController: UIViewController, FCColorPickerViewControllerDelegate {
 
-    var color = UIColor.blueColor() {
+    var color = UIColor.blue {
         didSet {
             self.view?.backgroundColor = color
         }
@@ -27,20 +27,20 @@ class ViewController: UIViewController, FCColorPickerViewControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func pickColor(sender :AnyObject) {
+    @IBAction func pickColor(_ sender :AnyObject) {
         let colorPicker = FCColorPickerViewController()
         colorPicker.color = color
         colorPicker.delegate = self
-        presentViewController(colorPicker, animated: true, completion: nil)
+        present(colorPicker, animated: true, completion: nil)
     }
     
-    func colorPickerViewController(colorPicker: FCColorPickerViewController, didSelectColor color: UIColor) {
+    func colorPickerViewController(_ colorPicker: FCColorPickerViewController, didSelect color: UIColor) {
         self.color = color
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
-    func colorPickerViewControllerDidCancel(colorPicker: FCColorPickerViewController) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func colorPickerViewControllerDidCancel(_ colorPicker: FCColorPickerViewController) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
